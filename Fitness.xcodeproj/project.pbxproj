@@ -54,14 +54,54 @@
 		24945AFE2936134D004C2F22 /* Fitness */ = {
 			isa = PBXGroup;
 			children = (
+				24945B13293619F0004C2F22 /* Application */,
+				24945B1429361A11004C2F22 /* Models */,
+				24945B1529361A1E004C2F22 /* Views */,
+				24945B1629361A2A004C2F22 /* Controllers */,
+				24945B1729361A34004C2F22 /* Resources */,
+			);
+			path = Fitness;
+			sourceTree = "<group>";
+		};
+		24945B13293619F0004C2F22 /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				24945AFF2936134D004C2F22 /* AppDelegate.swift */,
 				24945B012936134D004C2F22 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		24945B1429361A11004C2F22 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		24945B1529361A1E004C2F22 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		24945B1629361A2A004C2F22 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				24945B032936134D004C2F22 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		24945B1729361A34004C2F22 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				24945B082936134E004C2F22 /* Assets.xcassets */,
 				24945B0A2936134E004C2F22 /* LaunchScreen.storyboard */,
 				24945B0D2936134E004C2F22 /* Info.plist */,
 			);
-			path = Fitness;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,7 +317,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UJRW24XH5L;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Fitness/Info.plist;
+				INFOPLIST_FILE = Fitness/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -308,7 +348,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UJRW24XH5L;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Fitness/Info.plist;
+				INFOPLIST_FILE = Fitness/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

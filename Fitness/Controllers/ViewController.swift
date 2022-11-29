@@ -9,12 +9,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .green
+        setupView()
     }
-
-
+    
+    private func setupView() {
+        view.backgroundColor = #colorLiteral(red: 0.9532985091, green: 0.9427116513, blue: 0.9085384011, alpha: 1)
+    }
 }
 
