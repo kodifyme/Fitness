@@ -45,6 +45,7 @@ class MainViewController: UIViewController {
                                               right: 0)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 10)
         button.addTarget(self, action: #selector(addWorkoutButtonTapped), for: .touchUpInside)
+        button.addShadowOnView()
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()

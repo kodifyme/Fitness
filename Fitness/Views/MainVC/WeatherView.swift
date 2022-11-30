@@ -18,7 +18,7 @@ class WeatherView: UIView {
         return label
     }()
     
-    private let secondLabel: UILabel = {
+    private let secondaryLabel: UILabel = {
         let label = UILabel()
         label.text = "Хорошая погода, чтобы позаниматься на улице"
         label.adjustsFontSizeToFitWidth = true
@@ -50,9 +50,10 @@ class WeatherView: UIView {
         backgroundColor = #colorLiteral(red: 0.9764705882, green: 0.9764705882, blue: 0.9764705882, alpha: 1)
         translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = 10
+        addShadowOnView()
         
         addSubview(mainLabel)
-        addSubview(secondLabel)
+        addSubview(secondaryLabel)
         addSubview(sunImageView)
     }
 }
@@ -64,9 +65,9 @@ extension WeatherView {
             mainLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             mainLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             
-            secondLabel.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 5),
-            secondLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            secondLabel.trailingAnchor.constraint(equalTo: sunImageView.leadingAnchor, constant: -50),
+            secondaryLabel.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 5),
+            secondaryLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            secondaryLabel.trailingAnchor.constraint(equalTo: sunImageView.leadingAnchor, constant: -50),
             
             sunImageView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             sunImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
