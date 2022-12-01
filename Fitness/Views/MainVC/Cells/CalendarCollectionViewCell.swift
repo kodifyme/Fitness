@@ -27,6 +27,21 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    override var isSelected: Bool {
+        didSet {
+            if self.isSelected {
+                backgroundColor = .specialYellow
+                layer.cornerRadius = 10
+                dayOfWeekLabel.textColor = .specialBlack
+                numberOfWeekLabel.textColor = .specialDarkGreen
+            } else {
+                backgroundColor = .none
+                dayOfWeekLabel.textColor = .white
+                numberOfWeekLabel.textColor = .white
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -39,7 +54,6 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupView() {
-        layer.cornerRadius = 10
         addSubview(dayOfWeekLabel)
         addSubview(numberOfWeekLabel)
     }
