@@ -51,8 +51,29 @@ class MainViewController: UIViewController {
         return button
     }()
     
+    private let middleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Workout today"
+        label.textColor = .specialLightBrown
+        label.font = .robotoMedium14()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = .none
+        tableView.separatorStyle = .none
+        tableView.delaysContentTouches = false
+        tableView.showsVerticalScrollIndicator = true
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
     private let calendarView = CalendarView()
     private let weatherView = WeatherView()
+    
+    private let idWorkoutTableViewCell = "idWorkoutTableViewCell"
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -75,10 +96,34 @@ class MainViewController: UIViewController {
         view.addSubview(userNameLabel)
         view.addSubview(addWorkoutButton)
         view.addSubview(weatherView)
+        view.addSubview(middleLabel)
+        view.addSubview(tableView)
+        tableView.register(WorkoutTableViewCell.self, forCellReuseIdentifier: idWorkoutTableViewCell)
+        tableView.dataSource = self
+        tableView.delegate = self
     }
                                                                                                                             
     @objc private func addWorkoutButtonTapped() {
         print("tap")
+    }
+}
+
+extension MainViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: idWorkoutTableViewCell, for: indexPath) as? WorkoutTableViewCell else {
+            return UITableViewCell()
+        }
+        return cell
+    }
+}
+
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100
     }
 }
 
@@ -108,7 +153,15 @@ extension MainViewController {
             weatherView.topAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: 5),
             weatherView.leadingAnchor.constraint(equalTo: addWorkoutButton.trailingAnchor, constant: 5),
             weatherView.heightAnchor.constraint(equalToConstant: 80),
-            weatherView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10)
+            weatherView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            
+            middleLabel.topAnchor.constraint(equalTo: addWorkoutButton.bottomAnchor, constant: 10),
+            middleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            
+            tableView.topAnchor.constraint(equalTo: middleLabel.bottomAnchor, constant: 0),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
     }
 }
