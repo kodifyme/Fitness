@@ -11,6 +11,7 @@
 		2456AA0E2938E01E00006E8A /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2456AA0D2938E01E00006E8A /* CalendarCollectionViewCell.swift */; };
 		2456AA1029392EC700006E8A /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2456AA0F29392EC700006E8A /* WorkoutTableViewCell.swift */; };
 		245CA115294734D100A7874F /* StatisticsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245CA114294734D100A7874F /* StatisticsTableViewCell.swift */; };
+		245CA11729473E7700A7874F /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245CA11629473E7700A7874F /* MainTabBarViewController.swift */; };
 		246E801B293E4E6B0091702E /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E801A293E4E6B0091702E /* StatisticViewController.swift */; };
 		246E801D293E9DCE0091702E /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E801C293E9DCE0091702E /* UILabel + Extensions.swift */; };
 		24945B002936134D004C2F22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24945AFF2936134D004C2F22 /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 		2456AA0D2938E01E00006E8A /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		2456AA0F29392EC700006E8A /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
 		245CA114294734D100A7874F /* StatisticsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsTableViewCell.swift; sourceTree = "<group>"; };
+		245CA11629473E7700A7874F /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		246E801A293E4E6B0091702E /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 		246E801C293E9DCE0091702E /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
 		24945AFC2936134D004C2F22 /* Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 			children = (
 				24945B032936134D004C2F22 /* MainViewController.swift */,
 				246E801A293E4E6B0091702E /* StatisticViewController.swift */,
+				245CA11629473E7700A7874F /* MainTabBarViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				24C0264529374D8A0041E6E5 /* UIView + Extensions.swift in Sources */,
 				2433A0892936314100FD7ADC /* WeatherView.swift in Sources */,
 				246E801D293E9DCE0091702E /* UILabel + Extensions.swift in Sources */,
+				245CA11729473E7700A7874F /* MainTabBarViewController.swift in Sources */,
 				246E801B293E4E6B0091702E /* StatisticViewController.swift in Sources */,
 				24C0263E29374C550041E6E5 /* UIFont + Extensions.swift in Sources */,
 				245CA115294734D100A7874F /* StatisticsTableViewCell.swift in Sources */,

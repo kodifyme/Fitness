@@ -72,7 +72,7 @@ extension StatisticViewController: UITableViewDelegate, UITableViewDataSource {
 extension StatisticViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            mainLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            mainLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
             mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             segmentControlTop.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 20),
@@ -86,7 +86,7 @@ extension StatisticViewController {
             statisticsTableView.topAnchor.constraint(equalTo: exercisesLabel.bottomAnchor, constant: 5),
             statisticsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
             statisticsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            statisticsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200)
+            statisticsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
     }
 }
