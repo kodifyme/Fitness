@@ -13,7 +13,6 @@ class MainTabBarViewController: UITabBarController {
         super.viewDidLoad()
         
         tabBar.backgroundColor = .specialTabBar
-        tabBar.tintColor = .specialDarkGreen
         tabBar.unselectedItemTintColor = .specialGray
         tabBar.layer.borderWidth = 1
         tabBar.layer.borderColor = UIColor.specialLightBrown.cgColor
@@ -27,7 +26,7 @@ class MainTabBarViewController: UITabBarController {
         vc1.title = "Main"
         vc2.title = "Statistics"
         
-        tabBar.tintColor = .label
+        tabBar.tintColor = .specialDarkGreen
         
         setViewControllers([vc1, vc2], animated: true)
     }

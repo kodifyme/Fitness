@@ -10,12 +10,14 @@ import UIKit
 
 class StatisticViewController: UIViewController {
     
-    private let mainLabel = UILabel(text: "STATISTICS", font: .robotoMedium24(), textColor: .specialGray)
+    private let mainLabel = UILabel(text: "STATISTIC", font: .robotoMedium24(), textColor: .specialGray)
     
     private lazy var segmentControlTop: UISegmentedControl = {
         let segmentControl = UISegmentedControl(items: ["Неделя", "Месяц"])
-        segmentControl.backgroundColor = .specialDarkYellow
+        segmentControl.backgroundColor = .specialGreen
+        segmentControl.selectedSegmentTintColor = .specialDarkYellow
         segmentControl.selectedSegmentIndex = 0
+        segmentControl.addTarget(self, action: #selector(segmentedChange), for: .valueChanged)
         segmentControl.translatesAutoresizingMaskIntoConstraints = false
         return segmentControl
     }()
@@ -48,6 +50,10 @@ class StatisticViewController: UIViewController {
         view.addSubview(segmentControlTop)
         view.addSubview(exercisesLabel)
         view.addSubview(statisticsTableView)
+    }
+    
+    @objc private func segmentedChange() {
+        segmentControlTop.selectedSegmentIndex == 0 ? print("Неделя") : print("Месяц")
     }
 }
 
