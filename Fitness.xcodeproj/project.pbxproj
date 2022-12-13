@@ -14,6 +14,7 @@
 		245CA11729473E7700A7874F /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245CA11629473E7700A7874F /* MainTabBarViewController.swift */; };
 		246E801B293E4E6B0091702E /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E801A293E4E6B0091702E /* StatisticViewController.swift */; };
 		246E801D293E9DCE0091702E /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E801C293E9DCE0091702E /* UILabel + Extensions.swift */; };
+		2490814B2948D0F800563B41 /* NewWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490814A2948D0F800563B41 /* NewWorkoutViewController.swift */; };
 		24945B002936134D004C2F22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24945AFF2936134D004C2F22 /* AppDelegate.swift */; };
 		24945B022936134D004C2F22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24945B012936134D004C2F22 /* SceneDelegate.swift */; };
 		24945B042936134D004C2F22 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24945B032936134D004C2F22 /* MainViewController.swift */; };
@@ -35,6 +36,7 @@
 		245CA11629473E7700A7874F /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		246E801A293E4E6B0091702E /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 		246E801C293E9DCE0091702E /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
+		2490814A2948D0F800563B41 /* NewWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutViewController.swift; sourceTree = "<group>"; };
 		24945AFC2936134D004C2F22 /* Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24945AFF2936134D004C2F22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24945B012936134D004C2F22 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				24945B032936134D004C2F22 /* MainViewController.swift */,
 				246E801A293E4E6B0091702E /* StatisticViewController.swift */,
 				245CA11629473E7700A7874F /* MainTabBarViewController.swift */,
+				2490814A2948D0F800563B41 /* NewWorkoutViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				245CA115294734D100A7874F /* StatisticsTableViewCell.swift in Sources */,
 				2456AA1029392EC700006E8A /* WorkoutTableViewCell.swift in Sources */,
 				24945B042936134D004C2F22 /* MainViewController.swift in Sources */,
+				2490814B2948D0F800563B41 /* NewWorkoutViewController.swift in Sources */,
 				24945B002936134D004C2F22 /* AppDelegate.swift in Sources */,
 				24C0263C29374C430041E6E5 /* UIColor + Extensions.swift in Sources */,
 				2456AA0E2938E01E00006E8A /* CalendarCollectionViewCell.swift in Sources */,
