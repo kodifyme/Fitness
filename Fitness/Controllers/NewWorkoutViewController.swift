@@ -19,8 +19,6 @@ class NewWorkoutViewController: UIViewController {
         return button
     }()
     
-    private let nameLabel = UILabel(text: "Name")
-    
     private let nameTextField: UITextField = {
         let textField = UITextField()
         textField.backgroundColor = .specialBrown
@@ -38,6 +36,7 @@ class NewWorkoutViewController: UIViewController {
         return textField
     }()
     
+    private let nameLabel = UILabel(text: "Name")
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -55,7 +54,8 @@ class NewWorkoutViewController: UIViewController {
     }
     
     @objc private func closeButtonTapped() {
-        print("close")
+        dismiss(animated: true)
+    }
     }
 }
 
@@ -75,6 +75,7 @@ extension NewWorkoutViewController {
             nameTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             nameTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             nameTextField.heightAnchor.constraint(equalToConstant: 40)
+            nameTextField.heightAnchor.constraint(equalToConstant: 40),
         ])
     }
 }

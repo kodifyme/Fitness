@@ -95,9 +95,11 @@ class MainViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
-                                                                                                                            
+                                                                                                                        
     @objc private func addWorkoutButtonTapped() {
-        print("tap")
+        let newWorkoutViewController = NewWorkoutViewController()
+        newWorkoutViewController.modalPresentationStyle = .fullScreen
+        present(newWorkoutViewController, animated: true)
     }
 }
 
