@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2430BF1D294A4D6A002E7571 /* DateAndRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BF1C294A4D6A002E7571 /* DateAndRepeatView.swift */; };
+		2430BF1F294A50F6002E7571 /* RepsOrTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BF1E294A50F6002E7571 /* RepsOrTimerView.swift */; };
 		2433A0892936314100FD7ADC /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433A0882936314100FD7ADC /* WeatherView.swift */; };
 		2456AA0E2938E01E00006E8A /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2456AA0D2938E01E00006E8A /* CalendarCollectionViewCell.swift */; };
 		2456AA1029392EC700006E8A /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2456AA0F29392EC700006E8A /* WorkoutTableViewCell.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2430BF1C294A4D6A002E7571 /* DateAndRepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndRepeatView.swift; sourceTree = "<group>"; };
+		2430BF1E294A50F6002E7571 /* RepsOrTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsOrTimerView.swift; sourceTree = "<group>"; };
 		2433A0882936314100FD7ADC /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		2456AA0D2938E01E00006E8A /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		2456AA0F29392EC700006E8A /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
@@ -63,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2430BF1B294A4D3B002E7571 /* NewWorkoutVC */ = {
+			isa = PBXGroup;
+			children = (
+				2430BF1C294A4D6A002E7571 /* DateAndRepeatView.swift */,
+				2430BF1E294A50F6002E7571 /* RepsOrTimerView.swift */,
+			);
+			path = NewWorkoutVC;
+			sourceTree = "<group>";
+		};
 		2456AA0C2938E00B00006E8A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +151,7 @@
 			children = (
 				24945B182936265E004C2F22 /* MainVC */,
 				245CA1122947349600A7874F /* StatisticsVC */,
+				2430BF1B294A4D3B002E7571 /* NewWorkoutVC */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,10 +299,12 @@
 				24945B042936134D004C2F22 /* MainViewController.swift in Sources */,
 				2490814B2948D0F800563B41 /* NewWorkoutViewController.swift in Sources */,
 				24945B002936134D004C2F22 /* AppDelegate.swift in Sources */,
+				2430BF1F294A50F6002E7571 /* RepsOrTimerView.swift in Sources */,
 				24C0263C29374C430041E6E5 /* UIColor + Extensions.swift in Sources */,
 				2456AA0E2938E01E00006E8A /* CalendarCollectionViewCell.swift in Sources */,
 				24945B1A2936268C004C2F22 /* CalendarView.swift in Sources */,
 				24945B022936134D004C2F22 /* SceneDelegate.swift in Sources */,
+				2430BF1D294A4D6A002E7571 /* DateAndRepeatView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
