@@ -10,6 +10,7 @@
 		2430BF1D294A4D6A002E7571 /* DateAndRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BF1C294A4D6A002E7571 /* DateAndRepeatView.swift */; };
 		2430BF1F294A50F6002E7571 /* RepsOrTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BF1E294A50F6002E7571 /* RepsOrTimerView.swift */; };
 		2433A0892936314100FD7ADC /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433A0882936314100FD7ADC /* WeatherView.swift */; };
+		2441FB6A294B21F4008E203F /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2441FB69294B21F4008E203F /* UIStackView + Extensions.swift */; };
 		2456AA0E2938E01E00006E8A /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2456AA0D2938E01E00006E8A /* CalendarCollectionViewCell.swift */; };
 		2456AA1029392EC700006E8A /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2456AA0F29392EC700006E8A /* WorkoutTableViewCell.swift */; };
 		245CA115294734D100A7874F /* StatisticsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245CA114294734D100A7874F /* StatisticsTableViewCell.swift */; };
@@ -34,6 +35,7 @@
 		2430BF1C294A4D6A002E7571 /* DateAndRepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndRepeatView.swift; sourceTree = "<group>"; };
 		2430BF1E294A50F6002E7571 /* RepsOrTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsOrTimerView.swift; sourceTree = "<group>"; };
 		2433A0882936314100FD7ADC /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		2441FB69294B21F4008E203F /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 		2456AA0D2938E01E00006E8A /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		2456AA0F29392EC700006E8A /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
 		245CA114294734D100A7874F /* StatisticsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsTableViewCell.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				24C0263D29374C550041E6E5 /* UIFont + Extensions.swift */,
 				24C0264429374D8A0041E6E5 /* UIView + Extensions.swift */,
 				246E801C293E9DCE0091702E /* UILabel + Extensions.swift */,
+				2441FB69294B21F4008E203F /* UIStackView + Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24C0264529374D8A0041E6E5 /* UIView + Extensions.swift in Sources */,
+				2441FB6A294B21F4008E203F /* UIStackView + Extensions.swift in Sources */,
 				2433A0892936314100FD7ADC /* WeatherView.swift in Sources */,
 				246E801D293E9DCE0091702E /* UILabel + Extensions.swift in Sources */,
 				245CA11729473E7700A7874F /* MainTabBarViewController.swift in Sources */,

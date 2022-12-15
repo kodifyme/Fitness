@@ -33,7 +33,7 @@ class StatisticsTableViewCell: UITableViewCell {
         return label
     }()
     
-    private var stackView = UIStackView()
+    private var underStackView = UIStackView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -53,11 +53,10 @@ class StatisticsTableViewCell: UITableViewCell {
         addSubview(differenceLabel)
         addSubview(nameLabel)
         
-        stackView = UIStackView(arrangedSubviews: [beforeLabel, nowLabel])
-        stackView.axis = .horizontal // check docu
-        stackView.spacing = 10   // check docu
-        stackView.translatesAutoresizingMaskIntoConstraints = false // change
-        addSubview(stackView)
+        underStackView = UIStackView(arrangedSubviews: [beforeLabel, nowLabel],
+                                     axis: .horizontal,
+                                     spacing: 10)
+        addSubview(underStackView)
     }
     
     private func setConstraints() {
@@ -71,8 +70,8 @@ class StatisticsTableViewCell: UITableViewCell {
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             nameLabel.trailingAnchor.constraint(equalTo: differenceLabel.leadingAnchor, constant: -10),
         
-            stackView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 0),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
+            underStackView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 0),
+            underStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
         ])
     }
 }

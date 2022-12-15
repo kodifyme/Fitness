@@ -89,25 +89,22 @@ class RepsOrTimerView: UIView {
         layer.cornerRadius = 10
         translatesAutoresizingMaskIntoConstraints = false
         
-        setsStackView = UIStackView(arrangedSubviews: [setsLabel, numberOfSetLabel])
-        setsStackView.axis = .horizontal
-        setsStackView.spacing = 10
-        setsStackView.translatesAutoresizingMaskIntoConstraints = false
+        setsStackView = UIStackView(arrangedSubviews: [setsLabel, numberOfSetLabel],
+                                    axis: .horizontal,
+                                    spacing: 10)
         addSubview(setsStackView)
         addSubview(setsSlider)
         addSubview(repeatOrTimerLabel)
         
-        repsStackView = UIStackView(arrangedSubviews: [repsLabel, numberOfRepsLabel])
-        repsStackView.axis = .horizontal
-        repsStackView.spacing = 10
-        repsStackView.translatesAutoresizingMaskIntoConstraints = false
+        repsStackView = UIStackView(arrangedSubviews: [repsLabel, numberOfRepsLabel],
+                                    axis: .horizontal,
+                                    spacing: 10)
         addSubview(repsStackView)
         addSubview(repsSlider)
         
-        timerStackView = UIStackView(arrangedSubviews: [timerLabel, numberOfTimerLabel])
-        timerStackView.axis = .horizontal
-        timerStackView.spacing = 10
-        timerStackView.translatesAutoresizingMaskIntoConstraints = false
+        timerStackView = UIStackView(arrangedSubviews: [timerLabel, numberOfTimerLabel],
+                                     axis: .horizontal,
+                                     spacing: 10)
         addSubview(timerStackView)
         addSubview(timerSlider)
     }

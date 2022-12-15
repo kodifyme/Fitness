@@ -52,16 +52,14 @@ class DateAndRepeatView: UIView {
         backgroundColor = .specialBrown
         layer.cornerRadius = 10
         
-        dateStackView = UIStackView(arrangedSubviews: [dateLabel, datePicker])
-        dateStackView.axis = .horizontal
-        dateStackView.spacing = 10
-        dateStackView.translatesAutoresizingMaskIntoConstraints = false
+        dateStackView = UIStackView(arrangedSubviews: [dateLabel, datePicker],
+                                    axis: .horizontal,
+                                    spacing: 10)
         addSubview(dateStackView)
         
-        repeatStackView = UIStackView(arrangedSubviews: [repeatLabel, repeatSwitch])
-        repeatStackView.axis = .horizontal
-        repeatStackView.spacing = 10
-        repeatStackView.translatesAutoresizingMaskIntoConstraints = false
+        repeatStackView = UIStackView(arrangedSubviews: [repeatLabel, repeatSwitch],
+                                      axis: .horizontal,
+                                      spacing: 10)
         addSubview(repeatStackView)
     }
 }

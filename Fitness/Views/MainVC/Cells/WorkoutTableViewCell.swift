@@ -96,10 +96,9 @@ class WorkoutTableViewCell: UITableViewCell {
         workoutBackgroundView.addSubview(workoutImageView)
         addSubview(workoutNameLabel)
         
-        labelsStackView = UIStackView(arrangedSubviews: [workoutRepsLabel, workoutSetsLabel])
-        labelsStackView.axis = .horizontal // check docu
-        labelsStackView.spacing = 10   // check docu
-        labelsStackView.translatesAutoresizingMaskIntoConstraints = false // change
+        labelsStackView = UIStackView(arrangedSubviews: [workoutRepsLabel, workoutSetsLabel],
+                                      axis: .horizontal,
+                                      spacing: 10)
         addSubview(labelsStackView)
         contentView.addSubview(startButton)
     }
