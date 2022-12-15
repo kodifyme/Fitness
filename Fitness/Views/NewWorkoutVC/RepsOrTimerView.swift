@@ -110,15 +110,35 @@ class RepsOrTimerView: UIView {
     }
     
     @objc private func setsSliderChanged() {
-        print(setsSlider.value)
+        numberOfSetLabel.text = String(Int(setsSlider.value))
     }
     
     @objc private func repsSliderChanged() {
-        print(repsSlider.value)
+        numberOfRepsLabel.text = String(Int(repsSlider.value))
+        
+        setNegative(label: timerLabel, numberLabel: numberOfTimerLabel, slider: timerSlider)
+        setActive(label: repsLabel, numberLabel: numberOfRepsLabel, slider: repsSlider)
     }
     
     @objc private func timerSliderChanged() {
-        print(timerSlider.value)
+        numberOfTimerLabel.text = String(Int(timerSlider.value)) + " min"
+        
+        setNegative(label: repsLabel, numberLabel: numberOfRepsLabel, slider: repsSlider)
+        setActive(label: timerLabel, numberLabel: numberOfTimerLabel, slider: timerSlider)
+    }
+    
+    private func setNegative(label: UILabel, numberLabel: UILabel, slider: UISlider) {
+        label.alpha = 0.5
+        numberLabel.alpha = 0.5
+        numberLabel.text = "0"
+        slider.alpha = 0.5
+        slider.value = 0
+    }
+    
+    private func setActive(label: UILabel, numberLabel: UILabel, slider: UISlider) {
+        label.alpha = 1
+        numberLabel.alpha = 1
+        slider.alpha = 1
     }
 }
 
