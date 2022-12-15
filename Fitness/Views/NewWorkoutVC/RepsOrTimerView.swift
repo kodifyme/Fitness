@@ -33,7 +33,7 @@ class RepsOrTimerView: UIView {
     
     private lazy var  timerSlider: UISlider = {
         let slider = UISlider()
-        slider.minimumValue = 0
+        slider.minimumValue = 1
         slider.maximumValue = 600
         slider.maximumTrackTintColor = .specialLightBrown
         slider.minimumTrackTintColor = .specialGreen
@@ -63,7 +63,7 @@ class RepsOrTimerView: UIView {
                                      textColor: .specialGray)
     
     
-    private let numberOfTimerLabel = UILabel(text: "0 min",
+    private let numberOfTimerLabel = UILabel(text: "0",
                                              font: .robotoMedium24(),
                                              textColor: .specialGray)
     
@@ -121,8 +121,17 @@ class RepsOrTimerView: UIView {
     }
     
     @objc private func timerSliderChanged() {
-        numberOfTimerLabel.text = String(Int(timerSlider.value)) + " min"
+        let (min, sec) = { (sec: Int) -> (Int, Int) in
+            return (sec / 60, sec % 60)
+        }(Int(timerSlider.value))
         
+        switch (numberOfTimerLabel.text != nil) {
+            case min == 0 && sec != 0:
+                numberOfTimerLabel.text = "\(sec) sec"
+            case sec == 0 && min != 0:
+                numberOfTimerLabel.text = "\(min) min"
+            default: numberOfTimerLabel.text = "\(min) min \(sec) sec" }
+
         setNegative(label: repsLabel, numberLabel: numberOfRepsLabel, slider: repsSlider)
         setActive(label: timerLabel, numberLabel: numberOfTimerLabel, slider: timerSlider)
     }
