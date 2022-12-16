@@ -139,7 +139,7 @@ class RepsOrTimerView: UIView {
     private func setNegative(label: UILabel, numberLabel: UILabel, slider: UISlider) {
         label.alpha = 0.5
         numberLabel.alpha = 0.5
-        numberLabel.text = "0"
+        numberLabel.text = "-"
         slider.alpha = 0.5
         slider.value = 0
     }
