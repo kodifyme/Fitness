@@ -19,6 +19,8 @@
 		246E801D293E9DCE0091702E /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E801C293E9DCE0091702E /* UILabel + Extensions.swift */; };
 		2484289C294D0B860009EB33 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2484289B294D0B860009EB33 /* Realm */; };
 		2484289E294D0B860009EB33 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2484289D294D0B860009EB33 /* RealmSwift */; };
+		248428A0294D0C400009EB33 /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2484289F294D0C400009EB33 /* WorkoutModel.swift */; };
+		248428A3294D0DDE0009EB33 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248428A2294D0DDE0009EB33 /* RealmManager.swift */; };
 		2490814B2948D0F800563B41 /* NewWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490814A2948D0F800563B41 /* NewWorkoutViewController.swift */; };
 		24945B002936134D004C2F22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24945AFF2936134D004C2F22 /* AppDelegate.swift */; };
 		24945B022936134D004C2F22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24945B012936134D004C2F22 /* SceneDelegate.swift */; };
@@ -44,6 +46,8 @@
 		245CA11629473E7700A7874F /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		246E801A293E4E6B0091702E /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 		246E801C293E9DCE0091702E /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
+		2484289F294D0C400009EB33 /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
+		248428A2294D0DDE0009EB33 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		2490814A2948D0F800563B41 /* NewWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutViewController.swift; sourceTree = "<group>"; };
 		24945AFC2936134D004C2F22 /* Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24945AFF2936134D004C2F22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +111,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		248428A1294D0DC50009EB33 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				248428A2294D0DDE0009EB33 /* RealmManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		24945AF32936134D004C2F22 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +142,7 @@
 				24945B1429361A11004C2F22 /* Models */,
 				24945B1529361A1E004C2F22 /* Views */,
 				24945B1629361A2A004C2F22 /* Controllers */,
+				248428A1294D0DC50009EB33 /* Service */,
 				24C0263929374C0F0041E6E5 /* Extensions */,
 				24945B1729361A34004C2F22 /* Resources */,
 			);
@@ -148,6 +161,7 @@
 		24945B1429361A11004C2F22 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2484289F294D0C400009EB33 /* WorkoutModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -309,6 +323,7 @@
 				245CA11729473E7700A7874F /* MainTabBarViewController.swift in Sources */,
 				246E801B293E4E6B0091702E /* StatisticViewController.swift in Sources */,
 				24C0263E29374C550041E6E5 /* UIFont + Extensions.swift in Sources */,
+				248428A0294D0C400009EB33 /* WorkoutModel.swift in Sources */,
 				245CA115294734D100A7874F /* StatisticsTableViewCell.swift in Sources */,
 				2456AA1029392EC700006E8A /* WorkoutTableViewCell.swift in Sources */,
 				24945B042936134D004C2F22 /* MainViewController.swift in Sources */,
@@ -318,6 +333,7 @@
 				24C0263C29374C430041E6E5 /* UIColor + Extensions.swift in Sources */,
 				2456AA0E2938E01E00006E8A /* CalendarCollectionViewCell.swift in Sources */,
 				24945B1A2936268C004C2F22 /* CalendarView.swift in Sources */,
+				248428A3294D0DDE0009EB33 /* RealmManager.swift in Sources */,
 				24945B022936134D004C2F22 /* SceneDelegate.swift in Sources */,
 				2430BF1D294A4D6A002E7571 /* DateAndRepeatView.swift in Sources */,
 			);
