@@ -149,6 +149,17 @@ class RepsOrTimerView: UIView {
         numberLabel.alpha = 1
         slider.alpha = 1
     }
+    
+    private func getSliderValue() -> (Int, Int, Int) {
+        let setsSliderValue = Int(setsSlider.value)
+        let repsSliderValue = Int(repsSlider.value)
+        let timerSliderValue = Int(timerSlider.value)
+        return (setsSliderValue, repsSliderValue, timerSliderValue)
+    }
+    
+    public func setSliderValue() -> (Int, Int, Int) {
+        getSliderValue()
+    }
 }
 
 extension RepsOrTimerView {

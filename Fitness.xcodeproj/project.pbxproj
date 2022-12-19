@@ -33,6 +33,7 @@
 		24C0264229374CBF0041E6E5 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24C0264029374CBF0041E6E5 /* Roboto-Bold.ttf */; };
 		24C0264329374CBF0041E6E5 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24C0264129374CBF0041E6E5 /* Roboto-Medium.ttf */; };
 		24C0264529374D8A0041E6E5 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C0264429374D8A0041E6E5 /* UIView + Extensions.swift */; };
+		24FA12A629505E2F004420B3 /* Date + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FA12A529505E2F004420B3 /* Date + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		24C0264029374CBF0041E6E5 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		24C0264129374CBF0041E6E5 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		24C0264429374D8A0041E6E5 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
+		24FA12A529505E2F004420B3 /* Date + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				24C0263A29374C2B0041E6E5 /* UIKit */,
+				24FA12A529505E2F004420B3 /* Date + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				24945B1A2936268C004C2F22 /* CalendarView.swift in Sources */,
 				248428A3294D0DDE0009EB33 /* RealmManager.swift in Sources */,
 				24945B022936134D004C2F22 /* SceneDelegate.swift in Sources */,
+				24FA12A629505E2F004420B3 /* Date + Extensions.swift in Sources */,
 				2430BF1D294A4D6A002E7571 /* DateAndRepeatView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
