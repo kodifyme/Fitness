@@ -21,6 +21,8 @@
 		2484289E294D0B860009EB33 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2484289D294D0B860009EB33 /* RealmSwift */; };
 		248428A0294D0C400009EB33 /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2484289F294D0C400009EB33 /* WorkoutModel.swift */; };
 		248428A3294D0DDE0009EB33 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248428A2294D0DDE0009EB33 /* RealmManager.swift */; };
+		248774AF2952349C00DB9312 /* RepsWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248774AE2952349C00DB9312 /* RepsWorkoutViewController.swift */; };
+		248774B2295238B500DB9312 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248774B1295238B500DB9312 /* DetailsView.swift */; };
 		2490814B2948D0F800563B41 /* NewWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490814A2948D0F800563B41 /* NewWorkoutViewController.swift */; };
 		24945B002936134D004C2F22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24945AFF2936134D004C2F22 /* AppDelegate.swift */; };
 		24945B022936134D004C2F22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24945B012936134D004C2F22 /* SceneDelegate.swift */; };
@@ -49,6 +51,8 @@
 		246E801C293E9DCE0091702E /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
 		2484289F294D0C400009EB33 /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
 		248428A2294D0DDE0009EB33 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		248774AE2952349C00DB9312 /* RepsWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsWorkoutViewController.swift; sourceTree = "<group>"; };
+		248774B1295238B500DB9312 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		2490814A2948D0F800563B41 /* NewWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutViewController.swift; sourceTree = "<group>"; };
 		24945AFC2936134D004C2F22 /* Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24945AFF2936134D004C2F22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +125,14 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		248774B02952387700DB9312 /* RepsWorkoutVC */ = {
+			isa = PBXGroup;
+			children = (
+				248774B1295238B500DB9312 /* DetailsView.swift */,
+			);
+			path = RepsWorkoutVC;
+			sourceTree = "<group>";
+		};
 		24945AF32936134D004C2F22 = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +186,7 @@
 				24945B182936265E004C2F22 /* MainVC */,
 				245CA1122947349600A7874F /* StatisticsVC */,
 				2430BF1B294A4D3B002E7571 /* NewWorkoutVC */,
+				248774B02952387700DB9312 /* RepsWorkoutVC */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +198,7 @@
 				246E801A293E4E6B0091702E /* StatisticViewController.swift */,
 				245CA11629473E7700A7874F /* MainTabBarViewController.swift */,
 				2490814A2948D0F800563B41 /* NewWorkoutViewController.swift */,
+				248774AE2952349C00DB9312 /* RepsWorkoutViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -333,7 +347,9 @@
 				2490814B2948D0F800563B41 /* NewWorkoutViewController.swift in Sources */,
 				24945B002936134D004C2F22 /* AppDelegate.swift in Sources */,
 				2430BF1F294A50F6002E7571 /* RepsOrTimerView.swift in Sources */,
+				248774AF2952349C00DB9312 /* RepsWorkoutViewController.swift in Sources */,
 				24C0263C29374C430041E6E5 /* UIColor + Extensions.swift in Sources */,
+				248774B2295238B500DB9312 /* DetailsView.swift in Sources */,
 				2456AA0E2938E01E00006E8A /* CalendarCollectionViewCell.swift in Sources */,
 				24945B1A2936268C004C2F22 /* CalendarView.swift in Sources */,
 				248428A3294D0DDE0009EB33 /* RealmManager.swift in Sources */,
