@@ -23,6 +23,8 @@
 		248428A3294D0DDE0009EB33 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248428A2294D0DDE0009EB33 /* RealmManager.swift */; };
 		248774AF2952349C00DB9312 /* RepsWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248774AE2952349C00DB9312 /* RepsWorkoutViewController.swift */; };
 		248774B2295238B500DB9312 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248774B1295238B500DB9312 /* DetailsView.swift */; };
+		248A4AC729535173000E081A /* TimerWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A4AC629535173000E081A /* TimerWorkoutViewController.swift */; };
+		248A4ACA29535306000E081A /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A4AC929535306000E081A /* TimerView.swift */; };
 		2490814B2948D0F800563B41 /* NewWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490814A2948D0F800563B41 /* NewWorkoutViewController.swift */; };
 		24945B002936134D004C2F22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24945AFF2936134D004C2F22 /* AppDelegate.swift */; };
 		24945B022936134D004C2F22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24945B012936134D004C2F22 /* SceneDelegate.swift */; };
@@ -53,6 +55,8 @@
 		248428A2294D0DDE0009EB33 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		248774AE2952349C00DB9312 /* RepsWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsWorkoutViewController.swift; sourceTree = "<group>"; };
 		248774B1295238B500DB9312 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		248A4AC629535173000E081A /* TimerWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWorkoutViewController.swift; sourceTree = "<group>"; };
+		248A4AC929535306000E081A /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		2490814A2948D0F800563B41 /* NewWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutViewController.swift; sourceTree = "<group>"; };
 		24945AFC2936134D004C2F22 /* Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24945AFF2936134D004C2F22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +137,14 @@
 			path = RepsWorkoutVC;
 			sourceTree = "<group>";
 		};
+		248A4AC8295352E4000E081A /* TimerWorkoutVC */ = {
+			isa = PBXGroup;
+			children = (
+				248A4AC929535306000E081A /* TimerView.swift */,
+			);
+			path = TimerWorkoutVC;
+			sourceTree = "<group>";
+		};
 		24945AF32936134D004C2F22 = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +199,7 @@
 				245CA1122947349600A7874F /* StatisticsVC */,
 				2430BF1B294A4D3B002E7571 /* NewWorkoutVC */,
 				248774B02952387700DB9312 /* RepsWorkoutVC */,
+				248A4AC8295352E4000E081A /* TimerWorkoutVC */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,6 +212,7 @@
 				245CA11629473E7700A7874F /* MainTabBarViewController.swift */,
 				2490814A2948D0F800563B41 /* NewWorkoutViewController.swift */,
 				248774AE2952349C00DB9312 /* RepsWorkoutViewController.swift */,
+				248A4AC629535173000E081A /* TimerWorkoutViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -343,8 +357,10 @@
 				248428A0294D0C400009EB33 /* WorkoutModel.swift in Sources */,
 				245CA115294734D100A7874F /* StatisticsTableViewCell.swift in Sources */,
 				2456AA1029392EC700006E8A /* WorkoutTableViewCell.swift in Sources */,
+				248A4ACA29535306000E081A /* TimerView.swift in Sources */,
 				24945B042936134D004C2F22 /* MainViewController.swift in Sources */,
 				2490814B2948D0F800563B41 /* NewWorkoutViewController.swift in Sources */,
+				248A4AC729535173000E081A /* TimerWorkoutViewController.swift in Sources */,
 				24945B002936134D004C2F22 /* AppDelegate.swift in Sources */,
 				2430BF1F294A50F6002E7571 /* RepsOrTimerView.swift in Sources */,
 				248774AF2952349C00DB9312 /* RepsWorkoutViewController.swift in Sources */,
