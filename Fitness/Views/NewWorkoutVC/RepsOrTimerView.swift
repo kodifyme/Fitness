@@ -33,7 +33,7 @@ class RepsOrTimerView: UIView {
     
     private lazy var  timerSlider: UISlider = {
         let slider = UISlider()
-        slider.minimumValue = 1
+        slider.minimumValue = 0
         slider.maximumValue = 600
         slider.maximumTrackTintColor = .specialLightBrown
         slider.minimumTrackTintColor = .specialGreen
@@ -130,6 +130,8 @@ class RepsOrTimerView: UIView {
                 numberOfTimerLabel.text = "\(sec) sec"
             case sec == 0 && min != 0:
                 numberOfTimerLabel.text = "\(min) min"
+            case min == 0 && sec == 0:
+                numberOfTimerLabel.text = "\(sec) sec"
             default: numberOfTimerLabel.text = "\(min) min \(sec) sec" }
 
         setNegative(label: repsLabel, numberLabel: numberOfRepsLabel, slider: repsSlider)
@@ -139,7 +141,7 @@ class RepsOrTimerView: UIView {
     private func setNegative(label: UILabel, numberLabel: UILabel, slider: UISlider) {
         label.alpha = 0.5
         numberLabel.alpha = 0.5
-        numberLabel.text = "-"
+        numberLabel.text = "0"
         slider.alpha = 0.5
         slider.value = 0
     }
