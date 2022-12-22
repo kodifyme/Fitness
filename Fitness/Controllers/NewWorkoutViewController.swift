@@ -64,6 +64,9 @@ class NewWorkoutViewController: UIViewController {
 
         setupView()
         setConstraints()
+        
+        setDelegates()
+        addTaps()
     }
     
     private func setupView() {
@@ -78,6 +81,10 @@ class NewWorkoutViewController: UIViewController {
         view.addSubview(repsOrTimerLabel)
         view.addSubview(repsOrTimerView)
         view.addSubview(saveButton)
+    }
+    
+    private func setDelegates() {
+        nameTextField.delegate = self
     }
     
     @objc private func closeButtonTapped() {
@@ -106,6 +113,31 @@ class NewWorkoutViewController: UIViewController {
         
         guard let imageData = testImage?.pngData() else { return }
         workoutModel.workoutImage = imageData
+    }
+    
+    private func addTaps() {
+        let tapScreen = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapScreen)
+        
+        let swipeScreen = UISwipeGestureRecognizer(target: self, action: #selector(swipeHideKeyboard))
+        swipeScreen.cancelsTouchesInView = false
+        view.addGestureRecognizer(swipeScreen)
+    }
+    
+    @objc private func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc private func swipeHideKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+//MARK: - UITextFieldDelegate
+
+extension NewWorkoutViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameTextField.resignFirstResponder()
     }
 }
 
