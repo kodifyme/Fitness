@@ -93,7 +93,7 @@ class NewWorkoutViewController: UIViewController {
     
     @objc private func saveButtonTapped() {
         setModel()
-        RealmManager.shared.saveWorkoutModel(model: workoutModel)
+        saveModel()
     }
     
     //MARK: Data Collection
@@ -113,6 +113,22 @@ class NewWorkoutViewController: UIViewController {
         
         guard let imageData = testImage?.pngData() else { return }
         workoutModel.workoutImage = imageData
+    }
+    
+    // Text rules
+    private func saveModel() {
+        guard let text = nameTextField.text else { return }
+        let count = text.filter { $0.isNumber || $0.isLetter }.count
+        
+        if count != 0 &&
+            workoutModel.workoutSets != 0 &&
+            (workoutModel.workoutReps != 0 || workoutModel.workoutTimer != 0) {
+            RealmManager.shared.saveWorkoutModel(model: workoutModel)
+            workoutModel = WorkoutModel()
+            alertOk(title: "Success", message: nil)
+        } else {
+            alertOk(title: "Error", message: "Enter all parameters")
+        }
     }
     
     private func addTaps() {
