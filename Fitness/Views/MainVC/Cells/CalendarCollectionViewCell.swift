@@ -19,7 +19,7 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private let numberOfWeekLabel: UILabel = {
+    private let numberOfDayLabel: UILabel = {
         let label = UILabel()
         label.text = "07"
         label.font = .robotoBold20()
@@ -35,11 +35,11 @@ class CalendarCollectionViewCell: UICollectionViewCell {
                 backgroundColor = .specialYellow
                 layer.cornerRadius = 10
                 dayOfWeekLabel.textColor = .specialBlack
-                numberOfWeekLabel.textColor = .specialDarkGreen
+                numberOfDayLabel.textColor = .specialDarkGreen
             } else {
                 backgroundColor = .none
                 dayOfWeekLabel.textColor = .white
-                numberOfWeekLabel.textColor = .white
+                numberOfDayLabel.textColor = .white
             }
         }
     }
@@ -57,7 +57,16 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     
     private func setupView() {
         addSubview(dayOfWeekLabel)
-        addSubview(numberOfWeekLabel)
+        addSubview(numberOfDayLabel)
+    }
+    
+    private func cellConfigure(numberOfDay: String, dayOfWeek: String) {
+        numberOfDayLabel.text = numberOfDay
+        dayOfWeekLabel.text = dayOfWeek
+    }
+    
+    public func dateForCell(numberOfDay: String, dayOfWeek: String) {
+        cellConfigure(numberOfDay: numberOfDay, dayOfWeek: dayOfWeek)
     }
 }
 
@@ -67,8 +76,8 @@ extension CalendarCollectionViewCell {
             dayOfWeekLabel.topAnchor.constraint(equalTo: topAnchor, constant: 7),
             dayOfWeekLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            numberOfWeekLabel.topAnchor.constraint(equalTo: dayOfWeekLabel.bottomAnchor, constant: 5),
-            numberOfWeekLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+            numberOfDayLabel.topAnchor.constraint(equalTo: dayOfWeekLabel.bottomAnchor, constant: 5),
+            numberOfDayLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
     }
 }
