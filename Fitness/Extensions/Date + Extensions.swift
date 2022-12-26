@@ -35,6 +35,26 @@ extension Date {
         return weekArray
     }
     
+    // Period of the day
+    func startEndDate() -> (Date, Date) {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        
+        let calendar = Calendar.current
+        let day = calendar.component(.day, from: self)
+        let month = calendar.component(.month, from: self)
+        let year = calendar.component(.year, from: self)
+        let dateStart = formatter.date(from: "\(year)/\(month)/\(day)") ?? Date()
+        
+        let local = dateStart.localDate()
+        let dateEnd: Date = {
+            let components = DateComponents(day: 1)
+            return calendar.date(byAdding: components, to: local) ?? Date()
+        }()
+        return(local, dateEnd)
+    }
+    
     func getWeekdayNumber() -> Int {
         let calendar = Calendar.current
         let weekday = calendar.component(.weekday, from: self)
