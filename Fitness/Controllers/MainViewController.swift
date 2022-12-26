@@ -62,7 +62,7 @@ class MainViewController: UIViewController {
         return imageView
     }()
     
-    private let tableView: UITableView = {
+    private let workoutTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .none
         tableView.separatorStyle = .none
@@ -90,7 +90,7 @@ class MainViewController: UIViewController {
         super.viewWillAppear(animated)
         
         getWorkouts(date: Date())
-        tableView.reloadData()
+        workoutTableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -109,11 +109,11 @@ class MainViewController: UIViewController {
         view.addSubview(addWorkoutButton)
         view.addSubview(weatherView)
         view.addSubview(middleLabel)
-        view.addSubview(tableView)
+        view.addSubview(workoutTableView)
         view.addSubview(noWorkoutImageView)
-        tableView.register(WorkoutTableViewCell.self, forCellReuseIdentifier: idWorkoutTableViewCell)
-        tableView.dataSource = self
-        tableView.delegate = self
+        workoutTableView.register(WorkoutTableViewCell.self, forCellReuseIdentifier: idWorkoutTableViewCell)
+        workoutTableView.dataSource = self
+        workoutTableView.delegate = self
         calendarView.cellCollectionViewDelegate = self
     }
 
@@ -136,17 +136,23 @@ class MainViewController: UIViewController {
         workoutArray = localRealm.objects(WorkoutModel.self).filter(compound).sorted(byKeyPath: "workoutName")
         
         checkWorkoutToday()
-        tableView.reloadData()
+        workoutTableView.reloadData()
     }
     
     private func checkWorkoutToday() {
         if workoutArray.count == 0 {
             noWorkoutImageView.isHidden = false
-            tableView.isHidden = true
+            workoutTableView.isHidden = true
         } else {
             noWorkoutImageView.isHidden = true
-            tableView.isHidden = false
+            workoutTableView.isHidden = false
         }
+    }
+}
+
+extension MainViewController: StartWorkoutProtocol {
+    func startButtonTapped(model: WorkoutModel) {
+        print(model)
     }
 }
 
@@ -167,6 +173,7 @@ extension MainViewController: UITableViewDataSource {
         }
         let model = workoutArray[indexPath.row]
         cell.cellConfigure(model: model)
+        cell.cellStartWorkoutDelegate = self
         return cell
     }
 }
@@ -219,10 +226,10 @@ extension MainViewController {
             middleLabel.topAnchor.constraint(equalTo: addWorkoutButton.bottomAnchor, constant: 10),
             middleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             
-            tableView.topAnchor.constraint(equalTo: middleLabel.bottomAnchor, constant: 0),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            workoutTableView.topAnchor.constraint(equalTo: middleLabel.bottomAnchor, constant: 0),
+            workoutTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            workoutTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            workoutTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
             
             noWorkoutImageView.topAnchor.constraint(equalTo: middleLabel.bottomAnchor, constant: 0),
             noWorkoutImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
