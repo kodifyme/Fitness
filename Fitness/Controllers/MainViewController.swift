@@ -86,12 +86,18 @@ class MainViewController: UIViewController {
         userPhotoImageView.layer.cornerRadius = userPhotoImageView.frame.width / 2
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getWorkouts(date: Date())
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupView()
         setConstraints()
-        getWorkouts(date: Date().localDate())
     }
     
     private func setupView() {
