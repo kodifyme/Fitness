@@ -54,6 +54,14 @@ class MainViewController: UIViewController {
     
     private let middleLabel = UILabel(text: "Workout today")
     
+    private let noWorkoutImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "noWorkoutDay")
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .none
@@ -96,6 +104,7 @@ class MainViewController: UIViewController {
         view.addSubview(weatherView)
         view.addSubview(middleLabel)
         view.addSubview(tableView)
+        view.addSubview(noWorkoutImageView)
         tableView.register(WorkoutTableViewCell.self, forCellReuseIdentifier: idWorkoutTableViewCell)
         tableView.dataSource = self
         tableView.delegate = self
@@ -119,8 +128,19 @@ class MainViewController: UIViewController {
         let compound = NSCompoundPredicate(type: .or, subpredicates: [predicateRepeat, predicateUnrepeat])
         
         workoutArray = localRealm.objects(WorkoutModel.self).filter(compound).sorted(byKeyPath: "workoutName")
-        print(workoutArray)
+        
+        checkWorkoutToday()
         tableView.reloadData()
+    }
+    
+    private func checkWorkoutToday() {
+        if workoutArray.count == 0 {
+            noWorkoutImageView.isHidden = false
+            tableView.isHidden = true
+        } else {
+            noWorkoutImageView.isHidden = true
+            tableView.isHidden = false
+        }
     }
 }
 
@@ -148,6 +168,17 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "") { _, _, _ in
+            let deleteModel = self.workoutArray[indexPath.row]
+            RealmManager.shared.deleteWorkoutModel(model: deleteModel)
+            tableView.reloadData()
+        }
+        action.backgroundColor = .specialBackground
+        action.image = UIImage(named: "delete")
+        return UISwipeActionsConfiguration(actions: [action])
     }
 }
 
@@ -185,7 +216,12 @@ extension MainViewController {
             tableView.topAnchor.constraint(equalTo: middleLabel.bottomAnchor, constant: 0),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            
+            noWorkoutImageView.topAnchor.constraint(equalTo: middleLabel.bottomAnchor, constant: 0),
+            noWorkoutImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            noWorkoutImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            noWorkoutImageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1)
         ])
     }
 }
