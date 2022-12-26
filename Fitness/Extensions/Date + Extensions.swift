@@ -22,8 +22,8 @@ extension Date {
         formatter.dateFormat = "EEEEEE"
         
         var weekArray: [[String]] = [[], []]
-        var calendar = Calendar.current
-        calendar.timeZone = TimeZone(abbreviation: "UTC") ?? .current
+        let calendar = Calendar.current
+//        calendar.timeZone = TimeZone(abbreviation: "UTC") ?? .current
         
         for index in -6...0 {
             let date = calendar.date(byAdding: .day, value: index, to: self) ?? Date()
