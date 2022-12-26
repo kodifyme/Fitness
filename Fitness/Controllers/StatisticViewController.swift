@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 
 class StatisticViewController: UIViewController {
     
@@ -33,6 +33,19 @@ class StatisticViewController: UIViewController {
         return tableView
     }()
     
+    private let localRealm = try! Realm()
+    private var workoutArray: Results<WorkoutModel>!
+    
+    private var differenceArray = [DifferenceWorkout]()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        differenceArray = [DifferenceWorkout]()
+        setStartScreen()
+        statisticsTableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,20 +66,67 @@ class StatisticViewController: UIViewController {
     }
     
     @objc private func segmentedChange() {
-        segmentControlTop.selectedSegmentIndex == 0 ? print("Неделя") : print("Месяц")
+        let dateToday = Date().localDate()
+        differenceArray = [DifferenceWorkout]()
+        
+        if segmentControlTop.selectedSegmentIndex == 0 {
+            let dateStart = dateToday.offsetDays(days: 7)
+            getDifferenceModel(dateStart: dateStart)
+        } else {
+            let dateStart = dateToday.offsetMonth(month: 1)
+            getDifferenceModel(dateStart: dateStart)
+        }
+        statisticsTableView.reloadData()
+    }
+    
+    // Get unique names
+    private func getWorkoutsName() -> [String] {
+        var nameArray = [String]()
+        workoutArray = localRealm.objects(WorkoutModel.self)
+        
+        for workoutModel in workoutArray {
+            if !nameArray.contains(workoutModel.workoutName) {
+                nameArray.append(workoutModel.workoutName)
+            }
+        }
+        return nameArray
+    }
+    
+    private func getDifferenceModel(dateStart: Date) {
+        let dateEnd = Date().localDate()
+        let nameArray = getWorkoutsName()
+        
+        for name in nameArray {
+            let predicateDifference = NSPredicate(format: "workoutName = '\(name)' AND workoutDate BETWEEN %@", [dateStart, dateEnd])
+            workoutArray = localRealm.objects(WorkoutModel.self).filter(predicateDifference).sorted(byKeyPath: "workoutDate")
+            
+            guard let last = workoutArray.last?.workoutReps,
+                  let first = workoutArray.first?.workoutReps else { return }
+            
+            let differenceWorkout = DifferenceWorkout(name: name, lastReps: last, firstReps: first)
+            differenceArray.append(differenceWorkout)
+        }
+    }
+    
+    private func setStartScreen() {
+        let dateToday = Date().localDate()
+        getDifferenceModel(dateStart: dateToday.offsetDays(days: 7))
+        statisticsTableView.reloadData()
     }
 }
 
 extension StatisticViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        differenceArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: StatisticsTableViewCell.identifier, for: indexPath) as? StatisticsTableViewCell else {
             return UITableViewCell()
         }
+        let differenceModel = differenceArray[indexPath.row]
+        cell.cellConfigure(differenceWorkout: differenceModel)
         return cell
     }
     

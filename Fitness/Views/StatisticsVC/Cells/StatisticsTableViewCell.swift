@@ -59,17 +59,32 @@ class StatisticsTableViewCell: UITableViewCell {
         addSubview(underStackView)
     }
     
+    func cellConfigure(differenceWorkout: DifferenceWorkout) {
+        nameLabel.text = differenceWorkout.name
+        beforeLabel.text = "Before: \(differenceWorkout.firstReps)"
+        nowLabel.text = "Now: \(differenceWorkout.lastReps)"
+        
+        let difference = differenceWorkout.lastReps - differenceWorkout.firstReps
+        differenceLabel.text = "\(difference)"
+        
+        switch difference {
+            case ..<0: differenceLabel.textColor = .specialGreen
+            case 1...: differenceLabel.textColor = .specialDarkYellow
+            default: differenceLabel.textColor = .specialGray
+        }
+    }
+    
     private func setConstraints() {
         NSLayoutConstraint.activate([
             
             differenceLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             differenceLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             differenceLabel.widthAnchor.constraint(equalToConstant: 50),
-        
+            
             nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             nameLabel.trailingAnchor.constraint(equalTo: differenceLabel.leadingAnchor, constant: -10),
-        
+            
             underStackView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 0),
             underStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
         ])

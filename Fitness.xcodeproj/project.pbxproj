@@ -38,6 +38,7 @@
 		24C0264229374CBF0041E6E5 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24C0264029374CBF0041E6E5 /* Roboto-Bold.ttf */; };
 		24C0264329374CBF0041E6E5 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24C0264129374CBF0041E6E5 /* Roboto-Medium.ttf */; };
 		24C0264529374D8A0041E6E5 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C0264429374D8A0041E6E5 /* UIView + Extensions.swift */; };
+		24E3F0E2295A40F10062FE1C /* DifferenceWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F0E1295A40F10062FE1C /* DifferenceWorkout.swift */; };
 		24FA12A629505E2F004420B3 /* Date + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FA12A529505E2F004420B3 /* Date + Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		24C0264029374CBF0041E6E5 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		24C0264129374CBF0041E6E5 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		24C0264429374D8A0041E6E5 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
+		24E3F0E1295A40F10062FE1C /* DifferenceWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifferenceWorkout.swift; sourceTree = "<group>"; };
 		24FA12A529505E2F004420B3 /* Date + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				2484289F294D0C400009EB33 /* WorkoutModel.swift */,
+				24E3F0E1295A40F10062FE1C /* DifferenceWorkout.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				24C0264529374D8A0041E6E5 /* UIView + Extensions.swift in Sources */,
 				2441FB6A294B21F4008E203F /* UIStackView + Extensions.swift in Sources */,
 				2486EA222954765500B9BDBA /* SimpleAlert.swift in Sources */,
+				24E3F0E2295A40F10062FE1C /* DifferenceWorkout.swift in Sources */,
 				2433A0892936314100FD7ADC /* WeatherView.swift in Sources */,
 				246E801D293E9DCE0091702E /* UILabel + Extensions.swift in Sources */,
 				245CA11729473E7700A7874F /* MainTabBarViewController.swift in Sources */,
