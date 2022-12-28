@@ -28,7 +28,7 @@ class RepsWorkoutViewController: UIViewController {
     
     private let detailsLabel = UILabel(text: "Details")
     
-    private let detailsView = DetailsView()
+    private let workoutParametersView = WorkoutParametersView()
     
     private lazy var finishButton: UIButton = {
         let button = UIButton(type: .system)
@@ -42,11 +42,18 @@ class RepsWorkoutViewController: UIViewController {
         return button
     }()
     
+    var workoutModel = WorkoutModel()
+    
+    private var numberOfSet = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupView()
         setConstraints()
+        setWorkoutParameters()
+        
+        workoutParametersView.cellNextSetDelegate = self
     }
     
     private func setupView() {
@@ -56,7 +63,7 @@ class RepsWorkoutViewController: UIViewController {
         view.addSubview(closeButton)
         view.addSubview(humanImageView)
         view.addSubview(detailsLabel)
-        view.addSubview(detailsView)
+        view.addSubview(workoutParametersView)
         view.addSubview(finishButton)
     }
     
@@ -66,6 +73,28 @@ class RepsWorkoutViewController: UIViewController {
     
     @objc private func finishButtonTapped() {
         print("Finish")
+    }
+    
+    private func setWorkoutParameters() {
+        workoutParametersView.mainLabel.text = workoutModel.workoutName
+        workoutParametersView.numberOfSetsLabel.text = "\(numberOfSet)/\(workoutModel.workoutSets)"
+        workoutParametersView.numberOfRepsLabel.text = "\(workoutModel.workoutReps)"
+    }
+}
+
+//MARK: - NextSetProtocol
+extension RepsWorkoutViewController: NextSetProtocol {
+    func nextSetTapped() {
+        if numberOfSet < workoutModel.workoutSets {
+            numberOfSet += 1
+            workoutParametersView.numberOfSetsLabel.text = "\(numberOfSet)/\(workoutModel.workoutSets)"
+        } else {
+            alertOk(title: "Error", message: "Finish your workout")
+        }
+    }
+    
+    func editingTapped() {
+        
     }
 }
 
@@ -84,12 +113,12 @@ extension RepsWorkoutViewController {
             detailsLabel.topAnchor.constraint(equalTo: humanImageView.bottomAnchor, constant: 15),
             detailsLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25),
             
-            detailsView.topAnchor.constraint(equalTo: detailsLabel.bottomAnchor, constant: 3),
-            detailsView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
-            detailsView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-            detailsView.heightAnchor.constraint(equalToConstant: 270),
+            workoutParametersView.topAnchor.constraint(equalTo: detailsLabel.bottomAnchor, constant: 3),
+            workoutParametersView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            workoutParametersView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            workoutParametersView.heightAnchor.constraint(equalToConstant: 270),
             
-            finishButton.topAnchor.constraint(equalTo: detailsView.bottomAnchor, constant: 15),
+            finishButton.topAnchor.constraint(equalTo: workoutParametersView.bottomAnchor, constant: 15),
             finishButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             finishButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             finishButton.heightAnchor.constraint(equalToConstant: 55)

@@ -1,5 +1,5 @@
 //
-//  DetailsView.swift
+//  WorkoutParametersView.swift
 //  Fitness
 //
 //  Created by KODDER on 20.12.2022.
@@ -7,9 +7,14 @@
 
 import UIKit
 
-class DetailsView: UIView {
+protocol NextSetProtocol: AnyObject {
+    func nextSetTapped()
+    func editingTapped()
+}
+
+class WorkoutParametersView: UIView {
     
-    private let mainLabel = UILabel(text: "Biceps", font: .robotoMedium24(), textColor: .specialGray)
+    let mainLabel = UILabel(text: "Biceps", font: .robotoMedium24(), textColor: .specialGray)
     
     private let lineOneImageView: UIImageView = {
         let imageView = UIImageView()
@@ -29,7 +34,7 @@ class DetailsView: UIView {
                                     font: .robotoMedium18(),
                                     textColor: .specialGray)
     
-    private let numberOfSetLabel = UILabel(text: "1/4",
+    let numberOfSetsLabel = UILabel(text: "1/4",
                                            font: .robotoMedium24(),
                                            textColor: .specialGray)
     
@@ -37,7 +42,7 @@ class DetailsView: UIView {
                                     font: .robotoMedium18(),
                                     textColor: .specialGray)
     
-    private let numberOfRepsLabel = UILabel(text: "20",
+    let numberOfRepsLabel = UILabel(text: "20",
                                             font: .robotoMedium24(),
                                             textColor: .specialGray)
     
@@ -50,6 +55,7 @@ class DetailsView: UIView {
         button.setTitle("Editing", for: .normal)
         button.titleLabel?.tintColor = .specialGray
         button.titleLabel?.font = UIFont.robotoMedium16()
+        button.addTarget(self, action: #selector(editingButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -61,10 +67,12 @@ class DetailsView: UIView {
         button.titleLabel?.font = .robotoBold16()
         button.titleLabel?.tintColor = .specialDarkGreen
         button.setTitle("NEXT SET", for: .normal)
-        button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(nextSetsButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    weak var cellNextSetDelegate: NextSetProtocol?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -80,7 +88,7 @@ class DetailsView: UIView {
         
         addSubview(mainLabel)
         
-        setsStackView = UIStackView(arrangedSubviews: [setsLabel, numberOfSetLabel],
+        setsStackView = UIStackView(arrangedSubviews: [setsLabel, numberOfSetsLabel],
                                     axis: .horizontal,
                                     spacing: 10)
         addSubview(setsStackView)
@@ -95,8 +103,12 @@ class DetailsView: UIView {
         addSubview(nextSetButton)
     }
     
-    @objc private func nextButtonTapped() {
-        print("Next set")
+    @objc private func editingButtonTapped() {
+        
+    }
+    
+    @objc private func nextSetsButtonTapped() {
+        cellNextSetDelegate?.nextSetTapped()
     }
     
     required init?(coder: NSCoder) {
@@ -104,7 +116,7 @@ class DetailsView: UIView {
     }
 }
 
-extension DetailsView {
+extension WorkoutParametersView {
     private func setConstraints() {
         NSLayoutConstraint.activate([
             mainLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
