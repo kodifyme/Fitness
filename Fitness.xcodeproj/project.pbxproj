@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240031F7295C4CCC00E2E7C2 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240031F6295C4CCC00E2E7C2 /* CustomAlert.swift */; };
 		2430BF1D294A4D6A002E7571 /* DateAndRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BF1C294A4D6A002E7571 /* DateAndRepeatView.swift */; };
 		2430BF1F294A50F6002E7571 /* RepsOrTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BF1E294A50F6002E7571 /* RepsOrTimerView.swift */; };
 		2433A0892936314100FD7ADC /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433A0882936314100FD7ADC /* WeatherView.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		240031F6295C4CCC00E2E7C2 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		2430BF1C294A4D6A002E7571 /* DateAndRepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndRepeatView.swift; sourceTree = "<group>"; };
 		2430BF1E294A50F6002E7571 /* RepsOrTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsOrTimerView.swift; sourceTree = "<group>"; };
 		2433A0882936314100FD7ADC /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				2486EA212954765500B9BDBA /* SimpleAlert.swift */,
+				240031F6295C4CCC00E2E7C2 /* CustomAlert.swift */,
 			);
 			path = Alerts;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				24945B022936134D004C2F22 /* SceneDelegate.swift in Sources */,
 				24FA12A629505E2F004420B3 /* Date + Extensions.swift in Sources */,
 				2430BF1D294A4D6A002E7571 /* DateAndRepeatView.swift in Sources */,
+				240031F7295C4CCC00E2E7C2 /* CustomAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

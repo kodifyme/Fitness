@@ -104,7 +104,7 @@ class WorkoutParametersView: UIView {
     }
     
     @objc private func editingButtonTapped() {
-        
+        cellNextSetDelegate?.editingTapped()
     }
     
     @objc private func nextSetsButtonTapped() {

@@ -43,6 +43,7 @@ class RepsWorkoutViewController: UIViewController {
     }()
     
     var workoutModel = WorkoutModel()
+    let customAlert = CustomAlert()
     
     private var numberOfSet = 1
     
@@ -94,7 +95,10 @@ extension RepsWorkoutViewController: NextSetProtocol {
     }
     
     func editingTapped() {
-        
+        customAlert.alertCustom(viewController: self,
+                                repsOrTimer: "Reps", completion: { _,_ in 
+            
+        })
     }
 }
 
