@@ -27,6 +27,8 @@ class CustomAlert {
     
     private var mainView: UIView?
     
+    private var buttonAction: ( (String, String) -> Void)?
+    
     private let setTextField = UITextField()
     private let repsTextField = UITextField()
     
@@ -99,6 +101,48 @@ class CustomAlert {
         setTextField.keyboardType = .numberPad
         alertView.addSubview(setTextField)
         
+        let repsOrTimerLabel = UILabel(text: repsOrTimer)
+        repsOrTimerLabel.translatesAutoresizingMaskIntoConstraints = true
+        repsOrTimerLabel.frame = CGRect(x: 30,
+                                 y: setTextField.frame.maxY + 3,
+                                 width: alertView.frame.width - 60,
+                                 height: 20)
+        alertView.addSubview(repsOrTimerLabel)
+        
+        repsTextField.frame = CGRect(x: 20,
+                                    y: repsOrTimerLabel.frame.maxY,
+                                    width: alertView.frame.width - 40,
+                                    height: 30)
+        
+        
+        repsTextField.backgroundColor = .specialBrown
+        repsTextField.borderStyle = .none
+        repsTextField.layer.cornerRadius = 10
+        repsTextField.textColor = .specialGray
+        repsTextField.font = .robotoBold20()
+        repsTextField.leftView = UIView(frame: CGRect(x: 0,
+                                                   y: 0,
+                                                   width: 15,
+                                                   height: setTextField.frame.height))
+        repsTextField.leftViewMode = .always
+        repsTextField.clearButtonMode = .always
+        repsTextField.returnKeyType = .done
+        repsTextField.keyboardType = .numberPad
+        alertView.addSubview(repsTextField)
+        
+        let okButton = UIButton(frame: CGRect(x: 50,
+                                              y: repsTextField.frame.maxY + 15,
+                                              width: alertView.frame.width - 100,
+                                              height: 35))
+        okButton.backgroundColor = .specialGreen
+        okButton.setTitle("OK", for: .normal)
+        okButton.titleLabel?.textColor = .white
+        okButton.titleLabel?.font = .robotoMedium18()
+        okButton.layer.cornerRadius = 10
+        okButton.addTarget(self, action: #selector(okButtonTapped), for: .touchUpInside)
+        alertView.addSubview(okButton)
+        
+        buttonAction = completion
         
         UIView.animate(withDuration: 0.3) {
             self.backgroundView.alpha = 0.8
@@ -109,5 +153,9 @@ class CustomAlert {
                 }
             }
         }
+    }
+    
+    @objc private func okButtonTapped() {
+            print("ok")
     }
 }
