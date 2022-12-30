@@ -96,8 +96,18 @@ extension RepsWorkoutViewController: NextSetProtocol {
     
     func editingTapped() {
         customAlert.alertCustom(viewController: self,
-                                repsOrTimer: "Reps", completion: { test, test2 in
-            print(test, test2)
+                                repsOrTimer: "Reps", completion: { [self] sets, reps in
+            if sets != "" && reps != "" {
+                workoutParametersView.numberOfSetsLabel.text = "\(numberOfSet)/\(sets)"
+                workoutParametersView.numberOfRepsLabel.text = reps
+                
+                guard let numberOfSets = Int(sets),
+                      let numberOfReps = Int(reps) else { return }
+                
+                RealmManager.shared.updateSetsRepsWorkoutModel(model: workoutModel,
+                                                               sets: numberOfSets,
+                                                               reps: numberOfReps)
+            }
         })
     }
 }
