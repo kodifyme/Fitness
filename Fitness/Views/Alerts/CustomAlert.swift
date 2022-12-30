@@ -37,6 +37,9 @@ class CustomAlert {
     func alertCustom(viewController: UIViewController, repsOrTimer: String,
                      completion: @escaping (String, String) -> Void) {
         
+        // Observer
+        registerForKeyboardNotification()
+        
         guard let parentView = viewController.view else { return }
         mainView = parentView
         
@@ -153,6 +156,30 @@ class CustomAlert {
                                  parentView: parentView)
     }
     
+    private func registerForKeyboardNotification() {
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(kbWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(kbWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+    }
+    
+    private func removeForKeyboardNotification() {
+        
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardWillShowNotification,
+                                                  object: nil)
+        
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardWillHideNotification,
+                                                  object: nil)
+    }
+    
     @objc private func okButtonTapped() {
         guard let setsNumber = setTextField.text else { return }
         guard let repsNumber = repsTextField.text else { return }
@@ -167,5 +194,16 @@ class CustomAlert {
                                scrollView: scrollView)
         self.setTextField.text = ""
         self.repsTextField.text = ""
+        
+        // Observer
+        removeForKeyboardNotification()
+    }
+    
+    @objc func kbWillShow() {
+        scrollView.contentOffset = CGPoint(x: 0, y: 100)
+    }
+    
+    @objc func kbWillHide() {
+        scrollView.contentOffset = CGPoint.zero
     }
 }

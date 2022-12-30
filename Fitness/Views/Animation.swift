@@ -21,7 +21,7 @@ class Animation {
         }
     }
     
-    func endAnimation(targetView: UIView, alertView: UIView, backgroundView: UIView, scrollView: UIView) {
+    func endAnimation(targetView: UIView, alertView: UIView, backgroundView: UIView, scrollView: UIScrollView) {
         UIView.animate(withDuration: 0.3) {
             alertView.frame = CGRect(x: 40,
                                           y: targetView.frame.height,
