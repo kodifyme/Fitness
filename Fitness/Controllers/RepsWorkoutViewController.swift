@@ -73,7 +73,14 @@ class RepsWorkoutViewController: UIViewController {
     }
     
     @objc private func finishButtonTapped() {
-        print("Finish")
+        if numberOfSet == workoutModel.workoutSets {
+            dismiss(animated: true)
+            RealmManager.shared.updateStatusWorkoutModel(model: workoutModel)
+        } else {
+            alertOkCancel(title: "Warning", message: "You haven't finish your workout") {
+                self.dismiss(animated: true)
+            }
+        }
     }
     
     private func setWorkoutParameters() {

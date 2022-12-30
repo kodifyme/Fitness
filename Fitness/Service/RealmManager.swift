@@ -33,4 +33,10 @@ class RealmManager {
             model.workoutReps = reps
         }
     }
+    
+    func updateStatusWorkoutModel(model: WorkoutModel) {
+        try! localRealm.write {
+            model.workoutStatus = true
+        }
+    }
 }
