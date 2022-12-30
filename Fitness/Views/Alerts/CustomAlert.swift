@@ -29,6 +29,8 @@ class CustomAlert {
     
     private var buttonAction: ((String, String) -> Void)?
     
+    private let animation = Animation()
+    
     private let setTextField = UITextField()
     private let repsTextField = UITextField()
     
@@ -146,15 +148,9 @@ class CustomAlert {
         buttonAction = completion
         
         // Animation
-        UIView.animate(withDuration: 0.3) {
-            self.backgroundView.alpha = 0.8
-        } completion: { done in
-            if done {
-                UIView.animate(withDuration: 0.3) {
-                    self.alertView.center = parentView.center
-                }
-            }
-        }
+        animation.startAnimation(backgroundView: backgroundView,
+                                 alertView: alertView,
+                                 parentView: parentView)
     }
     
     @objc private func okButtonTapped() {
@@ -165,23 +161,11 @@ class CustomAlert {
         guard let targetView = mainView else { return }
         
         // End Animation
-        UIView.animate(withDuration: 0.3) {
-            self.alertView.frame = CGRect(x: 40,
-                                          y: targetView.frame.height,
-                                          width: targetView.frame.width - 80,
-                                          height: 420)
-        } completion: { done in
-            UIView.animate(withDuration: 0.3) {
-                self.backgroundView.alpha = 0
-            } completion: { done in
-                if done {
-                    self.alertView.removeFromSuperview()
-                    self.backgroundView.removeFromSuperview()
-                    self.scrollView.removeFromSuperview()
-                    self.setTextField.text = ""
-                    self.repsTextField.text = ""
-                }
-            }
-        }
+        animation.endAnimation(targetView: targetView,
+                               alertView: alertView,
+                               backgroundView: backgroundView,
+                               scrollView: scrollView)
+        self.setTextField.text = ""
+        self.repsTextField.text = ""
     }
 }
