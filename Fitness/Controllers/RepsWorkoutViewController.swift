@@ -96,8 +96,8 @@ extension RepsWorkoutViewController: NextSetProtocol {
     
     func editingTapped() {
         customAlert.alertCustom(viewController: self,
-                                repsOrTimer: "Reps", completion: { _,_ in 
-            
+                                repsOrTimer: "Reps", completion: { test, test2 in
+            print(test, test2)
         })
     }
 }

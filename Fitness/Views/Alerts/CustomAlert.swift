@@ -27,7 +27,7 @@ class CustomAlert {
     
     private var mainView: UIView?
     
-    private var buttonAction: ( (String, String) -> Void)?
+    private var buttonAction: ((String, String) -> Void)?
     
     private let setTextField = UITextField()
     private let repsTextField = UITextField()
@@ -101,6 +101,7 @@ class CustomAlert {
         setTextField.keyboardType = .numberPad
         alertView.addSubview(setTextField)
         
+        // Reps Or Timer Label
         let repsOrTimerLabel = UILabel(text: repsOrTimer)
         repsOrTimerLabel.translatesAutoresizingMaskIntoConstraints = true
         repsOrTimerLabel.frame = CGRect(x: 30,
@@ -109,12 +110,11 @@ class CustomAlert {
                                  height: 20)
         alertView.addSubview(repsOrTimerLabel)
         
+        // Reps TextField
         repsTextField.frame = CGRect(x: 20,
                                     y: repsOrTimerLabel.frame.maxY,
                                     width: alertView.frame.width - 40,
                                     height: 30)
-        
-        
         repsTextField.backgroundColor = .specialBrown
         repsTextField.borderStyle = .none
         repsTextField.layer.cornerRadius = 10
@@ -130,6 +130,7 @@ class CustomAlert {
         repsTextField.keyboardType = .numberPad
         alertView.addSubview(repsTextField)
         
+        // OK Button
         let okButton = UIButton(frame: CGRect(x: 50,
                                               y: repsTextField.frame.maxY + 15,
                                               width: alertView.frame.width - 100,
@@ -144,6 +145,7 @@ class CustomAlert {
         
         buttonAction = completion
         
+        // Animation
         UIView.animate(withDuration: 0.3) {
             self.backgroundView.alpha = 0.8
         } completion: { done in
@@ -156,6 +158,30 @@ class CustomAlert {
     }
     
     @objc private func okButtonTapped() {
-            print("ok")
+        guard let setsNumber = setTextField.text else { return }
+        guard let repsNumber = repsTextField.text else { return }
+        buttonAction?(setsNumber, repsNumber)
+        
+        guard let targetView = mainView else { return }
+        
+        // End Animation
+        UIView.animate(withDuration: 0.3) {
+            self.alertView.frame = CGRect(x: 40,
+                                          y: targetView.frame.height,
+                                          width: targetView.frame.width - 80,
+                                          height: 420)
+        } completion: { done in
+            UIView.animate(withDuration: 0.3) {
+                self.backgroundView.alpha = 0
+            } completion: { done in
+                if done {
+                    self.alertView.removeFromSuperview()
+                    self.backgroundView.removeFromSuperview()
+                    self.scrollView.removeFromSuperview()
+                    self.setTextField.text = ""
+                    self.repsTextField.text = ""
+                }
+            }
+        }
     }
 }

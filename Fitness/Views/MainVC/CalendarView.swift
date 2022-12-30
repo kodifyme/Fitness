@@ -60,7 +60,6 @@ extension CalendarView: UICollectionViewDataSource {
         }
         
         let dateTimeZone = Date()
-        print(Date().localDate())
         let weekArray = dateTimeZone.getWeekArray()
         cell.dateForCell(numberOfDay: weekArray[1][indexPath.item], dayOfWeek: weekArray[0][indexPath.item])
         
