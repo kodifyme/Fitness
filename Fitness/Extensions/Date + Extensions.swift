@@ -62,7 +62,7 @@ extension Date {
     }
     
     func offsetDays(days: Int) -> Date {
-        let offsetDate = Calendar.current.date(byAdding: .day, value: -days, to: self) ?? Date()
+        let offsetDate = Calendar.current.date(byAdding: .day, value: -days, to: self) ?? Date().localDate()
         return offsetDate
     }
     

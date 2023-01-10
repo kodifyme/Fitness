@@ -68,9 +68,9 @@ class StatisticsTableViewCell: UITableViewCell {
         differenceLabel.text = "\(difference)"
         
         switch difference {
-            case ..<0: differenceLabel.textColor = .specialGreen
-            case 1...: differenceLabel.textColor = .specialDarkYellow
-            default: differenceLabel.textColor = .specialGray
+            case ..<0: differenceLabel.textColor = .red
+            case 1...: differenceLabel.textColor = .specialGreen
+            default: differenceLabel.textColor = .specialDarkYellow
         }
     }
     

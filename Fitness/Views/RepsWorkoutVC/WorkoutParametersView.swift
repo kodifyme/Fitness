@@ -96,7 +96,7 @@ class WorkoutParametersView: UIView {
         
         repsStackView = UIStackView(arrangedSubviews: [repsLabel, numberOfRepsLabel],
                                     axis: .horizontal,
-                                    spacing: 10)
+                                    spacing: 15)
         addSubview(repsStackView)
         addSubview(lineTwoImageView)
         addSubview(editingButton)
