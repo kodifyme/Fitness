@@ -27,7 +27,7 @@
 		248774AF2952349C00DB9312 /* RepsWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248774AE2952349C00DB9312 /* RepsWorkoutViewController.swift */; };
 		248774B2295238B500DB9312 /* WorkoutParametersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248774B1295238B500DB9312 /* WorkoutParametersView.swift */; };
 		248A4AC729535173000E081A /* TimerWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A4AC629535173000E081A /* TimerWorkoutViewController.swift */; };
-		248A4ACA29535306000E081A /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A4AC929535306000E081A /* TimerView.swift */; };
+		248A4ACA29535306000E081A /* TimerParametersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A4AC929535306000E081A /* TimerParametersView.swift */; };
 		2490814B2948D0F800563B41 /* NewWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490814A2948D0F800563B41 /* NewWorkoutViewController.swift */; };
 		24945B002936134D004C2F22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24945AFF2936134D004C2F22 /* AppDelegate.swift */; };
 		24945B022936134D004C2F22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24945B012936134D004C2F22 /* SceneDelegate.swift */; };
@@ -41,6 +41,7 @@
 		24C0264329374CBF0041E6E5 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24C0264129374CBF0041E6E5 /* Roboto-Medium.ttf */; };
 		24C0264529374D8A0041E6E5 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C0264429374D8A0041E6E5 /* UIView + Extensions.swift */; };
 		24E3F0E2295A40F10062FE1C /* DifferenceWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3F0E1295A40F10062FE1C /* DifferenceWorkout.swift */; };
+		24F697F6296DE594002E7F4C /* Int + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F697F5296DE594002E7F4C /* Int + Extensions.swift */; };
 		24FA12A629505E2F004420B3 /* Date + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FA12A529505E2F004420B3 /* Date + Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,7 +64,7 @@
 		248774AE2952349C00DB9312 /* RepsWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsWorkoutViewController.swift; sourceTree = "<group>"; };
 		248774B1295238B500DB9312 /* WorkoutParametersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutParametersView.swift; sourceTree = "<group>"; };
 		248A4AC629535173000E081A /* TimerWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWorkoutViewController.swift; sourceTree = "<group>"; };
-		248A4AC929535306000E081A /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		248A4AC929535306000E081A /* TimerParametersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerParametersView.swift; sourceTree = "<group>"; };
 		2490814A2948D0F800563B41 /* NewWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutViewController.swift; sourceTree = "<group>"; };
 		24945AFC2936134D004C2F22 /* Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24945AFF2936134D004C2F22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +80,7 @@
 		24C0264129374CBF0041E6E5 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		24C0264429374D8A0041E6E5 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
 		24E3F0E1295A40F10062FE1C /* DifferenceWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifferenceWorkout.swift; sourceTree = "<group>"; };
+		24F697F5296DE594002E7F4C /* Int + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Extensions.swift"; sourceTree = "<group>"; };
 		24FA12A529505E2F004420B3 /* Date + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,7 +159,7 @@
 		248A4AC8295352E4000E081A /* TimerWorkoutVC */ = {
 			isa = PBXGroup;
 			children = (
-				248A4AC929535306000E081A /* TimerView.swift */,
+				248A4AC929535306000E081A /* TimerParametersView.swift */,
 			);
 			path = TimerWorkoutVC;
 			sourceTree = "<group>";
@@ -263,6 +265,7 @@
 			children = (
 				24C0263A29374C2B0041E6E5 /* UIKit */,
 				24FA12A529505E2F004420B3 /* Date + Extensions.swift */,
+				24F697F5296DE594002E7F4C /* Int + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -379,7 +382,7 @@
 				248428A0294D0C400009EB33 /* WorkoutModel.swift in Sources */,
 				245CA115294734D100A7874F /* StatisticsTableViewCell.swift in Sources */,
 				2456AA1029392EC700006E8A /* WorkoutTableViewCell.swift in Sources */,
-				248A4ACA29535306000E081A /* TimerView.swift in Sources */,
+				248A4ACA29535306000E081A /* TimerParametersView.swift in Sources */,
 				24945B042936134D004C2F22 /* MainViewController.swift in Sources */,
 				2490814B2948D0F800563B41 /* NewWorkoutViewController.swift in Sources */,
 				248A4AC729535173000E081A /* TimerWorkoutViewController.swift in Sources */,
@@ -394,6 +397,7 @@
 				248428A3294D0DDE0009EB33 /* RealmManager.swift in Sources */,
 				24945B022936134D004C2F22 /* SceneDelegate.swift in Sources */,
 				24FA12A629505E2F004420B3 /* Date + Extensions.swift in Sources */,
+				24F697F6296DE594002E7F4C /* Int + Extensions.swift in Sources */,
 				2430BF1D294A4D6A002E7571 /* DateAndRepeatView.swift in Sources */,
 				240031F7295C4CCC00E2E7C2 /* CustomAlert.swift in Sources */,
 			);

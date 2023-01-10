@@ -7,9 +7,14 @@
 
 import UIKit
 
-class TimerView: UIView {
+protocol NextSetTimerProtocol: AnyObject {
+    func nextSetTimerTapped()
+    func editingTimerTapped()
+}
+
+class TimerParametersView: UIView {
     
-    private let mainLabel = UILabel(text: "Squats", font: .robotoMedium24(), textColor: .specialGray)
+    let mainLabel = UILabel(text: "", font: .robotoMedium24(), textColor: .specialGray)
     
     private let lineOneImageView: UIImageView = {
         let imageView = UIImageView()
@@ -29,7 +34,7 @@ class TimerView: UIView {
                                     font: .robotoMedium18(),
                                     textColor: .specialGray)
     
-    private let numberOfSetLabel = UILabel(text: "1/4",
+    let numberOfSetLabel = UILabel(text: "",
                                            font: .robotoMedium24(),
                                            textColor: .specialGray)
     
@@ -37,31 +42,34 @@ class TimerView: UIView {
                                     font: .robotoMedium18(),
                                     textColor: .specialGray)
     
-    private let numberTimeOfSetLabel = UILabel(text: "1 min 30 sec",
+    let numberTimeOfSetLabel = UILabel(text: "",
                                             font: .robotoMedium24(),
                                             textColor: .specialGray)
     
     private var setsStackView = UIStackView()
     private var timeOfSetStackView = UIStackView()
     
-    private let editingButton: UIButton = {
+    weak var cellNextSetTimerDelegate: NextSetTimerProtocol?
+    
+    let editingButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "Editing")?.withRenderingMode(.alwaysOriginal), for: .normal)
         button.setTitle("Editing", for: .normal)
         button.titleLabel?.tintColor = .specialGray
         button.titleLabel?.font = UIFont.robotoMedium16()
+        button.addTarget(self, action: #selector(editingButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
-    private lazy var nextSetButton: UIButton = {
+    lazy var nextSetButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .specialDarkYellow
         button.layer.cornerRadius = 10
         button.titleLabel?.font = .robotoBold16()
         button.titleLabel?.tintColor = .specialDarkGreen
         button.setTitle("NEXT SET", for: .normal)
-        button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(nextSetsButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -95,8 +103,12 @@ class TimerView: UIView {
         addSubview(nextSetButton)
     }
     
-    @objc private func nextButtonTapped() {
-        print("Next set")
+    @objc private func editingButtonTapped() {
+        cellNextSetTimerDelegate?.editingTimerTapped()
+    }
+    
+    @objc private func nextSetsButtonTapped() {
+        cellNextSetTimerDelegate?.nextSetTimerTapped()
     }
     
     required init?(coder: NSCoder) {
@@ -104,7 +116,7 @@ class TimerView: UIView {
     }
 }
 
-extension TimerView {
+extension TimerParametersView {
     private func setConstraints() {
         NSLayoutConstraint.activate([
             mainLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
