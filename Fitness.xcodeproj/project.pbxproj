@@ -11,6 +11,7 @@
 		2430BF1D294A4D6A002E7571 /* DateAndRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BF1C294A4D6A002E7571 /* DateAndRepeatView.swift */; };
 		2430BF1F294A50F6002E7571 /* RepsOrTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BF1E294A50F6002E7571 /* RepsOrTimerView.swift */; };
 		2433A0892936314100FD7ADC /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433A0882936314100FD7ADC /* WeatherView.swift */; };
+		243529D529704D0A0080F47D /* EditingProfileViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 243529D429704D0A0080F47D /* EditingProfileViewController .swift */; };
 		2441FB6A294B21F4008E203F /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2441FB69294B21F4008E203F /* UIStackView + Extensions.swift */; };
 		244287D6295F7593008FC5B2 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244287D5295F7593008FC5B2 /* Animation.swift */; };
 		2455D608296EAFFA00DE546D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455D607296EAFFA00DE546D /* ProfileViewController.swift */; };
@@ -52,6 +53,7 @@
 		2430BF1C294A4D6A002E7571 /* DateAndRepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndRepeatView.swift; sourceTree = "<group>"; };
 		2430BF1E294A50F6002E7571 /* RepsOrTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsOrTimerView.swift; sourceTree = "<group>"; };
 		2433A0882936314100FD7ADC /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		243529D429704D0A0080F47D /* EditingProfileViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditingProfileViewController .swift"; sourceTree = "<group>"; };
 		2441FB69294B21F4008E203F /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 		244287D5295F7593008FC5B2 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		2455D607296EAFFA00DE546D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				248774AE2952349C00DB9312 /* RepsWorkoutViewController.swift */,
 				248A4AC629535173000E081A /* TimerWorkoutViewController.swift */,
 				2455D607296EAFFA00DE546D /* ProfileViewController.swift */,
+				243529D429704D0A0080F47D /* EditingProfileViewController .swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				248428A0294D0C400009EB33 /* WorkoutModel.swift in Sources */,
 				245CA115294734D100A7874F /* StatisticsTableViewCell.swift in Sources */,
 				2456AA1029392EC700006E8A /* WorkoutTableViewCell.swift in Sources */,
+				243529D529704D0A0080F47D /* EditingProfileViewController .swift in Sources */,
 				2455D608296EAFFA00DE546D /* ProfileViewController.swift in Sources */,
 				248A4ACA29535306000E081A /* TimerParametersView.swift in Sources */,
 				24945B042936134D004C2F22 /* MainViewController.swift in Sources */,

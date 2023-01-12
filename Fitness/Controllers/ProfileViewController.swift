@@ -95,7 +95,9 @@ class ProfileViewController: UIViewController {
     }
     
     @objc private func editingButtonTapped() {
-        print("ed")
+        let editingProfileVC = EditingProfileViewController()
+        editingProfileVC.modalPresentationStyle = .fullScreen
+        present(editingProfileVC, animated: true)
     }
 }
 
