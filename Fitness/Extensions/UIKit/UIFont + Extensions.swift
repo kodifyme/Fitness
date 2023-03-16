@@ -11,27 +11,27 @@ extension UIFont {
 
     //Medium
     static func robotoMedium12() -> UIFont? {
-        return UIFont.init(name: "Roboto-Medium", size: 12)
+        return UIFont(name: "Roboto-Medium", size: 12)
     }
     
     static func robotoMedium14() -> UIFont? {
-        return UIFont.init(name: "Roboto-Medium", size: 14)
+        return UIFont(name: "Roboto-Medium", size: 14)
     }
     
     static func robotoMedium16() -> UIFont? {
-        return UIFont.init(name: "Roboto-Medium", size: 16)
+        return UIFont(name: "Roboto-Medium", size: 16)
     }
     
     static func robotoMedium18() -> UIFont? {
-        return UIFont.init(name: "Roboto-Medium", size: 18)
+        return UIFont(name: "Roboto-Medium", size: 18)
     }
     
     static func robotoMedium22() -> UIFont? {
-        return UIFont.init(name: "Roboto-Medium", size: 22)
+        return UIFont(name: "Roboto-Medium", size: 22)
     }
     
     static func robotoMedium24() -> UIFont? {
-        return UIFont.init(name: "Roboto-Medium", size: 24)
+        return UIFont(name: "Roboto-Medium", size: 24)
     }
     
     //Bold

@@ -51,7 +51,7 @@ class TimerParametersView: UIView {
     
     weak var cellNextSetTimerDelegate: NextSetTimerProtocol?
     
-    let editingButton: UIButton = {
+    private lazy var editingButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "Editing")?.withRenderingMode(.alwaysOriginal), for: .normal)
         button.setTitle("Editing", for: .normal)

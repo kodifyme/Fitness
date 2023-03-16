@@ -49,7 +49,7 @@ class WorkoutParametersView: UIView {
     private var setsStackView = UIStackView()
     private var repsStackView = UIStackView()
     
-    private let editingButton: UIButton = {
+    private lazy var editingButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "Editing")?.withRenderingMode(.alwaysOriginal), for: .normal)
         button.setTitle("Editing", for: .normal)

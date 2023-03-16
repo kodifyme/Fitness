@@ -34,7 +34,7 @@ class ProfileViewController: UIViewController {
     private var heightLabel = UILabel(text: "Height: 178", font: .robotoBold16(), textColor: .specialGray)
     private var weightLabel = UILabel(text: "Weight: 77", font: .robotoBold16(), textColor: .specialGray)
     
-    private let editingButton: UIButton = {
+    private lazy var editingButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "MoreCircle")?.withRenderingMode(.alwaysOriginal), for: .normal)
         button.setTitle("Editing ", for: .normal)
