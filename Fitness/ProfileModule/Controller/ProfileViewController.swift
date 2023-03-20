@@ -25,6 +25,7 @@ class ProfileViewController: UIViewController {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "UserPhoto")
         imageView.layer.borderWidth = 5
+        imageView.clipsToBounds = true
         imageView.layer.borderColor = UIColor.white.cgColor
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -83,11 +84,21 @@ class ProfileViewController: UIViewController {
         userImageView.layer.cornerRadius = userImageView.frame.width / 2
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        resultWorkout = [ResultWorkout]()
+        getWorkoutResults()
+        workoutCollectionView.reloadData()
+        setupUserParameters()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupView()
         setConstraints()
+        
+        userArray = localRealm.objects(UserModel.self)
         
         workoutCollectionView.delegate = self
         workoutCollectionView.dataSource = self
@@ -133,6 +144,19 @@ class ProfileViewController: UIViewController {
             }
             let resultModel = ResultWorkout(name: name, result: result, imageData: image)
             resultWorkout.append(resultModel)
+        }
+    }
+    
+    private func setupUserParameters() {
+        
+        if userArray.count != 0 {
+            nameLabel.text = userArray[0].userFirstName + " " + userArray[0].userSecondName
+            heightLabel.text = "Height: \(userArray[0].userHeight)"
+            weightLabel.text = "Weight: \(userArray[0].userWeight)"
+            
+            guard let data = userArray[0].userImage else { return }
+            guard let image = UIImage(data: data) else { return }
+            userImageView.image = image
         }
     }
     
@@ -185,9 +209,11 @@ extension ProfileViewController {
             
             userImageView.centerXAnchor.constraint(equalTo: topView.centerXAnchor),
             userImageView.centerYAnchor.constraint(equalTo: topView.topAnchor),
+            userImageView.heightAnchor.constraint(equalToConstant: 100),
+            userImageView.widthAnchor.constraint(equalToConstant: 100),
             
             heightLabel.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 5),
-            heightLabel.leftAnchor.constraint(equalTo: topView.leftAnchor, constant: 25),
+            heightLabel.leftAnchor.constraint(equalTo: topView.leftAnchor, constant: 20),
             
             weightLabel.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 5),
             weightLabel.leftAnchor.constraint(equalTo: heightLabel.rightAnchor, constant: 10),
