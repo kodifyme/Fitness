@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class EditingProfileViewController: UIViewController {
  
@@ -119,6 +120,10 @@ class EditingProfileViewController: UIViewController {
         return button
     }()
     
+    private let localRealm = try! Realm()
+    private var userArray: Results<UserModel>!
+    private var userModel = UserModel()
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -130,9 +135,10 @@ class EditingProfileViewController: UIViewController {
         
         setupView()
         setConstraints()
-        
-//        setDelegates()
         addTaps()
+        
+        userArray = localRealm.objects(UserModel.self)
+        loadUserInfo()
     }
     
     private func setupView() {
@@ -152,36 +158,69 @@ class EditingProfileViewController: UIViewController {
         view.addSubview(saveButton)
     }
     
-//    private func setDelegates() {
-//        firstNameTextField.delegate = self
-//        secondNameTextField.delegate = self
-//        heightTextField.delegate = self
-//        weightTextField.delegate = self
-//    }
-    
     private func addTaps() {
-        let tapScreen = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        view.addGestureRecognizer(tapScreen)
+        let tapScreen = UITapGestureRecognizer(target: self, action: #selector(setUserPhoto))
+        userImageView.isUserInteractionEnabled = true
+        userImageView.addGestureRecognizer(tapScreen)
     }
     
-    @objc private func hideKeyboard() {
-        view.endEditing(true)
+    private func loadUserInfo() {
+        if userArray.count != 0 {
+            firstNameTextField.text = userArray[0].userFirstName
+            secondNameTextField.text = userArray[0].userSecondName
+            heightTextField.text = "\(userArray[0].userHeight)"
+            weightTextField.text = "\(userArray[0].userWeight)"
+            
+            guard let data = userArray[0].userImage else { return }
+            guard let image = UIImage(data: data) else { return }
+            userImageView.image = image
+            userImageView.contentMode = .scaleAspectFit
+        }
+    }
+    
+    @objc private func setUserPhoto() {
+        print("UserPhoto")
     }
     
     
     @objc private func saveButtonTapped() {
+        setUserModel()
+        
+        if userArray.count == 0 {
+            RealmManager.shared.saveUserModel(model: userModel)
+        } else {
+            RealmManager.shared.updateUserModel(model: userModel)
+        }
+        userModel = UserModel()
         dismiss(animated: true)
     }
+    
+    private func setUserModel() {
+        
+        guard let firstName = firstNameTextField.text,
+              let secondName = secondNameTextField.text,
+              let height = heightTextField.text,
+              let weight = weightTextField.text else {
+            return
+        }
+        
+        guard let intHeight = Int(height),
+              let intWeight = Int(weight) else {
+            return
+        }
+        userModel.userFirstName = firstName
+        userModel.userSecondName = secondName
+        userModel.userHeight = intHeight
+        userModel.userWeight = intWeight
+        
+        if userImageView.image == UIImage(named: "UserPhoto") {
+            userModel.userImage = nil
+        } else {
+            guard let imageData = userImageView.image?.pngData() else { return }
+            userModel.userImage = imageData
+        }
+    }
 }
-
-//extension EditingProfileViewController: UITextFieldDelegate {
-//    private func textFieldShouldReturn(_ textField: UITextField) -> (Bool, Bool, Bool, Bool) {
-//        return (firstNameTextField.resignFirstResponder(),
-//        secondNameTextField.resignFirstResponder(),
-//        heightTextField.resignFirstResponder(),
-//        weightTextField.resignFirstResponder())
-//    }
-//}
 
 extension EditingProfileViewController {
     

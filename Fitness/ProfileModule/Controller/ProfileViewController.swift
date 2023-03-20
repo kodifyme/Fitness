@@ -6,6 +6,13 @@
 //
 
 import UIKit
+import RealmSwift
+
+struct ResultWorkout {
+    let name: String
+    let result: Int
+    let imageData: Data?
+}
 
 class ProfileViewController: UIViewController {
     
@@ -64,6 +71,12 @@ class ProfileViewController: UIViewController {
     
     private let targetLabel = UILabel(text: "TARGET: 20 workouts", font: .robotoBold16(), textColor: .specialGray)
     
+    private let localRealm = try! Realm()
+    private var workoutArray: Results<WorkoutModel>!
+    private var userArray: Results<UserModel>!
+    
+    private var resultWorkout = [ResultWorkout]()
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -94,6 +107,35 @@ class ProfileViewController: UIViewController {
         view.addSubview(targetLabel)
     }
     
+    private func getWorkoutsName() -> [String] {
+        var nameArray = [String]()
+        workoutArray = localRealm.objects(WorkoutModel.self)
+        
+        for workoutModel in workoutArray {
+            if !nameArray.contains(workoutModel.workoutName) {
+                nameArray.append(workoutModel.workoutName)
+            }
+        }
+        return nameArray
+    }
+    
+    private func getWorkoutResults() {
+        let nameArray = getWorkoutsName()
+        
+        for name in nameArray {
+            let predicateName = NSPredicate(format: "workoutName = '\(name)'")
+            workoutArray = localRealm.objects(WorkoutModel.self).filter(predicateName).sorted(byKeyPath: "workoutName")
+            var result = 0
+            var image: Data?
+            workoutArray.forEach { model in
+                result += model.workoutReps
+                image = model.workoutImage
+            }
+            let resultModel = ResultWorkout(name: name, result: result, imageData: image)
+            resultWorkout.append(resultModel)
+        }
+    }
+    
     @objc private func editingButtonTapped() {
         let editingProfileVC = EditingProfileViewController()
         editingProfileVC.modalPresentationStyle = .fullScreen
@@ -101,6 +143,7 @@ class ProfileViewController: UIViewController {
     }
 }
 
+//MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -111,17 +154,19 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkoutCollectionViewCell.identifier, for: indexPath) as? WorkoutCollectionViewCell else {
             return UICollectionViewCell()
         }
+        cell.backgroundColor = (indexPath.row % 4 == 0 || indexPath.row % 4 == 3 ? .specialGreen : .specialYellow) 
         return cell
     }
 }
 
+//MARK: - UICollectionViewDelegateFlowLayout
 extension ProfileViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: 170, height: 120)
     }
 }
 
-
+//MARK: - Constraints
 extension ProfileViewController {
     
     private func setConstraints() {

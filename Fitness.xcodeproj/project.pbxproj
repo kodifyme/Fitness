@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		240031F7295C4CCC00E2E7C2 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240031F6295C4CCC00E2E7C2 /* CustomAlert.swift */; };
+		242B38FB29C3891500ED3736 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B38FA29C3891500ED3736 /* UserModel.swift */; };
 		2430BF1D294A4D6A002E7571 /* DateAndRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BF1C294A4D6A002E7571 /* DateAndRepeatView.swift */; };
 		2430BF1F294A50F6002E7571 /* RepsOrTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BF1E294A50F6002E7571 /* RepsOrTimerView.swift */; };
 		2433A0892936314100FD7ADC /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433A0882936314100FD7ADC /* WeatherView.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		240031F6295C4CCC00E2E7C2 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		242B38FA29C3891500ED3736 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		2430BF1C294A4D6A002E7571 /* DateAndRepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndRepeatView.swift; sourceTree = "<group>"; };
 		2430BF1E294A50F6002E7571 /* RepsOrTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsOrTimerView.swift; sourceTree = "<group>"; };
 		2433A0882936314100FD7ADC /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		242B38F729C3856C00ED3736 /* ProfileModule */ = {
+			isa = PBXGroup;
+			children = (
+				242B38F929C3858E00ED3736 /* View */,
+				242B38F829C3858200ED3736 /* Controller */,
+			);
+			path = ProfileModule;
+			sourceTree = "<group>";
+		};
+		242B38F829C3858200ED3736 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2455D607296EAFFA00DE546D /* ProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		242B38F929C3858E00ED3736 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2455D60A296EBB9200DE546D /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2430BF1B294A4D3B002E7571 /* NewWorkoutVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,14 +137,6 @@
 				2430BF1E294A50F6002E7571 /* RepsOrTimerView.swift */,
 			);
 			path = NewWorkoutVC;
-			sourceTree = "<group>";
-		};
-		2455D609296EBB7400DE546D /* ProfileVC */ = {
-			isa = PBXGroup;
-			children = (
-				2455D60A296EBB9200DE546D /* Cells */,
-			);
-			path = ProfileVC;
 			sourceTree = "<group>";
 		};
 		2455D60A296EBB9200DE546D /* Cells */ = {
@@ -208,6 +227,7 @@
 				24945B13293619F0004C2F22 /* Application */,
 				24945B1429361A11004C2F22 /* Models */,
 				24945B1529361A1E004C2F22 /* Views */,
+				242B38F729C3856C00ED3736 /* ProfileModule */,
 				24945B1629361A2A004C2F22 /* Controllers */,
 				248428A1294D0DC50009EB33 /* Service */,
 				24C0263929374C0F0041E6E5 /* Extensions */,
@@ -230,6 +250,7 @@
 			children = (
 				2484289F294D0C400009EB33 /* WorkoutModel.swift */,
 				24E3F0E1295A40F10062FE1C /* DifferenceWorkout.swift */,
+				242B38FA29C3891500ED3736 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -237,7 +258,6 @@
 		24945B1529361A1E004C2F22 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2455D609296EBB7400DE546D /* ProfileVC */,
 				24945B182936265E004C2F22 /* MainVC */,
 				245CA1122947349600A7874F /* StatisticsVC */,
 				2430BF1B294A4D3B002E7571 /* NewWorkoutVC */,
@@ -258,7 +278,6 @@
 				2490814A2948D0F800563B41 /* NewWorkoutViewController.swift */,
 				248774AE2952349C00DB9312 /* RepsWorkoutViewController.swift */,
 				248A4AC629535173000E081A /* TimerWorkoutViewController.swift */,
-				2455D607296EAFFA00DE546D /* ProfileViewController.swift */,
 				243529D429704D0A0080F47D /* EditingProfileViewController .swift */,
 			);
 			path = Controllers;
@@ -403,6 +422,7 @@
 				246E801D293E9DCE0091702E /* UILabel + Extensions.swift in Sources */,
 				245CA11729473E7700A7874F /* MainTabBarViewController.swift in Sources */,
 				246E801B293E4E6B0091702E /* StatisticViewController.swift in Sources */,
+				242B38FB29C3891500ED3736 /* UserModel.swift in Sources */,
 				24C0263E29374C550041E6E5 /* UIFont + Extensions.swift in Sources */,
 				248428A0294D0C400009EB33 /* WorkoutModel.swift in Sources */,
 				245CA115294734D100A7874F /* StatisticsTableViewCell.swift in Sources */,
