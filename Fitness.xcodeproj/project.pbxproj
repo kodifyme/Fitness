@@ -14,6 +14,7 @@
 		2433A0892936314100FD7ADC /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433A0882936314100FD7ADC /* WeatherView.swift */; };
 		243529D529704D0A0080F47D /* EditingProfileViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 243529D429704D0A0080F47D /* EditingProfileViewController .swift */; };
 		2440C6C829C875C500053C96 /* GallaryOrPhotoAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2440C6C729C875C500053C96 /* GallaryOrPhotoAlert.swift */; };
+		2440C6CA29C8D3EC00053C96 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2440C6C929C8D3EC00053C96 /* Notifications.swift */; };
 		2441FB6A294B21F4008E203F /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2441FB69294B21F4008E203F /* UIStackView + Extensions.swift */; };
 		244287D6295F7593008FC5B2 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244287D5295F7593008FC5B2 /* Animation.swift */; };
 		2455D608296EAFFA00DE546D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455D607296EAFFA00DE546D /* ProfileViewController.swift */; };
@@ -58,6 +59,7 @@
 		2433A0882936314100FD7ADC /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		243529D429704D0A0080F47D /* EditingProfileViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditingProfileViewController .swift"; sourceTree = "<group>"; };
 		2440C6C729C875C500053C96 /* GallaryOrPhotoAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallaryOrPhotoAlert.swift; sourceTree = "<group>"; };
+		2440C6C929C8D3EC00053C96 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		2441FB69294B21F4008E203F /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 		244287D5295F7593008FC5B2 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		2455D607296EAFFA00DE546D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			children = (
 				24945AFF2936134D004C2F22 /* AppDelegate.swift */,
 				24945B012936134D004C2F22 /* SceneDelegate.swift */,
+				2440C6C929C8D3EC00053C96 /* Notifications.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				242B38FB29C3891500ED3736 /* UserModel.swift in Sources */,
 				24C0263E29374C550041E6E5 /* UIFont + Extensions.swift in Sources */,
 				248428A0294D0C400009EB33 /* WorkoutModel.swift in Sources */,
+				2440C6CA29C8D3EC00053C96 /* Notifications.swift in Sources */,
 				245CA115294734D100A7874F /* StatisticsTableViewCell.swift in Sources */,
 				2456AA1029392EC700006E8A /* WorkoutTableViewCell.swift in Sources */,
 				243529D529704D0A0080F47D /* EditingProfileViewController .swift in Sources */,
