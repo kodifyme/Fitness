@@ -13,6 +13,7 @@
 		2430BF1F294A50F6002E7571 /* RepsOrTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BF1E294A50F6002E7571 /* RepsOrTimerView.swift */; };
 		2433A0892936314100FD7ADC /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2433A0882936314100FD7ADC /* WeatherView.swift */; };
 		243529D529704D0A0080F47D /* EditingProfileViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 243529D429704D0A0080F47D /* EditingProfileViewController .swift */; };
+		2440C6C829C875C500053C96 /* GallaryOrPhotoAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2440C6C729C875C500053C96 /* GallaryOrPhotoAlert.swift */; };
 		2441FB6A294B21F4008E203F /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2441FB69294B21F4008E203F /* UIStackView + Extensions.swift */; };
 		244287D6295F7593008FC5B2 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244287D5295F7593008FC5B2 /* Animation.swift */; };
 		2455D608296EAFFA00DE546D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455D607296EAFFA00DE546D /* ProfileViewController.swift */; };
@@ -56,6 +57,7 @@
 		2430BF1E294A50F6002E7571 /* RepsOrTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsOrTimerView.swift; sourceTree = "<group>"; };
 		2433A0882936314100FD7ADC /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		243529D429704D0A0080F47D /* EditingProfileViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditingProfileViewController .swift"; sourceTree = "<group>"; };
+		2440C6C729C875C500053C96 /* GallaryOrPhotoAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallaryOrPhotoAlert.swift; sourceTree = "<group>"; };
 		2441FB69294B21F4008E203F /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 		244287D5295F7593008FC5B2 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		2455D607296EAFFA00DE546D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				2486EA212954765500B9BDBA /* SimpleAlert.swift */,
 				240031F6295C4CCC00E2E7C2 /* CustomAlert.swift */,
+				2440C6C729C875C500053C96 /* GallaryOrPhotoAlert.swift */,
 			);
 			path = Alerts;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2440C6C829C875C500053C96 /* GallaryOrPhotoAlert.swift in Sources */,
 				24C0264529374D8A0041E6E5 /* UIView + Extensions.swift in Sources */,
 				2441FB6A294B21F4008E203F /* UIStackView + Extensions.swift in Sources */,
 				2486EA222954765500B9BDBA /* SimpleAlert.swift in Sources */,

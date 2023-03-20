@@ -18,6 +18,8 @@ class EditingProfileViewController: UIViewController {
         imageView.image = UIImage(named: "UserPhoto")
         imageView.layer.borderWidth = 5
         imageView.layer.borderColor = UIColor.white.cgColor
+        imageView.clipsToBounds = true
+        imageView.contentMode = .center
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -179,7 +181,10 @@ class EditingProfileViewController: UIViewController {
     }
     
     @objc private func setUserPhoto() {
-        print("UserPhoto")
+        alertPhotoOrCamera { [weak self] source in
+            guard let self = self else { return }
+            self.chooseImagePicker(source: source)
+        }
     }
     
     
@@ -222,6 +227,32 @@ class EditingProfileViewController: UIViewController {
     }
 }
 
+//MARK: - UIImagePickerControllerDelegate
+extension EditingProfileViewController: UIImagePickerControllerDelegate {
+    func chooseImagePicker(source: UIImagePickerController.SourceType) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(source) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = source
+            present(imagePicker, animated: true)
+        }
+    }
+}
+
+//MARK: - UINavigationControllerDelegate
+extension EditingProfileViewController: UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let image = info[.editedImage] as? UIImage
+        userImageView.image = image
+        userImageView.contentMode = .scaleAspectFit
+        dismiss(animated: true)
+    }
+}
+
+//MARK: - Constraints
 extension EditingProfileViewController {
     
     private func setConstraints() {
@@ -237,6 +268,8 @@ extension EditingProfileViewController {
             
             userImageView.centerXAnchor.constraint(equalTo: topView.centerXAnchor),
             userImageView.centerYAnchor.constraint(equalTo: topView.topAnchor),
+            userImageView.heightAnchor.constraint(equalToConstant: 100),
+            userImageView.widthAnchor.constraint(equalToConstant: 100),
             
             firstNameLabel.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 30),
             firstNameLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30),

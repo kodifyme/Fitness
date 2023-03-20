@@ -62,6 +62,7 @@ class RealmManager {
             users[0].userSecondName = model.userSecondName
             users[0].userHeight = model.userHeight
             users[0].userWeight = model.userWeight
+            users[0].userImage = model.userImage
         }
     }
 }
