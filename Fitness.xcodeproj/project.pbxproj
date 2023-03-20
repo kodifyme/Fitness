@@ -134,13 +134,148 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		2430BF1B294A4D3B002E7571 /* NewWorkoutVC */ = {
+		2440C6CB29C8DEEF00053C96 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				2440C6CC29C8DF3A00053C96 /* View */,
+				2440C6CD29C8DF4A00053C96 /* Controllers */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		2440C6CC29C8DF3A00053C96 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2456AA0C2938E00B00006E8A /* Cells */,
+				24945B192936268C004C2F22 /* CalendarView.swift */,
+				2433A0882936314100FD7ADC /* WeatherView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2440C6CD29C8DF4A00053C96 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				24945B032936134D004C2F22 /* MainViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		2440C6CF29C8DFB000053C96 /* StatisticsModule */ = {
+			isa = PBXGroup;
+			children = (
+				2440C6D129C8DFCD00053C96 /* View */,
+				2440C6D029C8DFC400053C96 /* Controller */,
+			);
+			path = StatisticsModule;
+			sourceTree = "<group>";
+		};
+		2440C6D029C8DFC400053C96 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				246E801A293E4E6B0091702E /* StatisticViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2440C6D129C8DFCD00053C96 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				245CA113294734B500A7874F /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2440C6D229C8E00B00053C96 /* NewWorkoutModule */ = {
+			isa = PBXGroup;
+			children = (
+				2440C6D429C8E02200053C96 /* View */,
+				2440C6D329C8E01900053C96 /* Controller */,
+			);
+			path = NewWorkoutModule;
+			sourceTree = "<group>";
+		};
+		2440C6D329C8E01900053C96 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2490814A2948D0F800563B41 /* NewWorkoutViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2440C6D429C8E02200053C96 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				2430BF1C294A4D6A002E7571 /* DateAndRepeatView.swift */,
 				2430BF1E294A50F6002E7571 /* RepsOrTimerView.swift */,
 			);
-			path = NewWorkoutVC;
+			path = View;
+			sourceTree = "<group>";
+		};
+		2440C6D529C8E07000053C96 /* RepsWorkoutModule */ = {
+			isa = PBXGroup;
+			children = (
+				2440C6D729C8E08D00053C96 /* View */,
+				2440C6D629C8E08700053C96 /* Controller */,
+			);
+			path = RepsWorkoutModule;
+			sourceTree = "<group>";
+		};
+		2440C6D629C8E08700053C96 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				248774AE2952349C00DB9312 /* RepsWorkoutViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2440C6D729C8E08D00053C96 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				248774B1295238B500DB9312 /* WorkoutParametersView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2440C6D829C8E0B000053C96 /* TimerWorkoutModule */ = {
+			isa = PBXGroup;
+			children = (
+				2440C6DA29C8E0C500053C96 /* View */,
+				2440C6D929C8E0BF00053C96 /* Controller */,
+			);
+			path = TimerWorkoutModule;
+			sourceTree = "<group>";
+		};
+		2440C6D929C8E0BF00053C96 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				248A4AC629535173000E081A /* TimerWorkoutViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2440C6DA29C8E0C500053C96 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				248A4AC929535306000E081A /* TimerParametersView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2440C6DB29C8E0FC00053C96 /* EditingProfileModule */ = {
+			isa = PBXGroup;
+			children = (
+				2440C6DC29C8E10D00053C96 /* Controller */,
+			);
+			path = EditingProfileModule;
+			sourceTree = "<group>";
+		};
+		2440C6DC29C8E10D00053C96 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				243529D429704D0A0080F47D /* EditingProfileViewController .swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		2455D60A296EBB9200DE546D /* Cells */ = {
@@ -158,14 +293,6 @@
 				2456AA0F29392EC700006E8A /* WorkoutTableViewCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		245CA1122947349600A7874F /* StatisticsVC */ = {
-			isa = PBXGroup;
-			children = (
-				245CA113294734B500A7874F /* Cells */,
-			);
-			path = StatisticsVC;
 			sourceTree = "<group>";
 		};
 		245CA113294734B500A7874F /* Cells */ = {
@@ -194,22 +321,6 @@
 			path = Alerts;
 			sourceTree = "<group>";
 		};
-		248774B02952387700DB9312 /* RepsWorkoutVC */ = {
-			isa = PBXGroup;
-			children = (
-				248774B1295238B500DB9312 /* WorkoutParametersView.swift */,
-			);
-			path = RepsWorkoutVC;
-			sourceTree = "<group>";
-		};
-		248A4AC8295352E4000E081A /* TimerWorkoutVC */ = {
-			isa = PBXGroup;
-			children = (
-				248A4AC929535306000E081A /* TimerParametersView.swift */,
-			);
-			path = TimerWorkoutVC;
-			sourceTree = "<group>";
-		};
 		24945AF32936134D004C2F22 = {
 			isa = PBXGroup;
 			children = (
@@ -231,9 +342,16 @@
 			children = (
 				24945B13293619F0004C2F22 /* Application */,
 				24945B1429361A11004C2F22 /* Models */,
-				24945B1529361A1E004C2F22 /* Views */,
+				2486EA202954763B00B9BDBA /* Alerts */,
+				244287D5295F7593008FC5B2 /* Animation.swift */,
+				24945B1629361A2A004C2F22 /* TabBar */,
+				2440C6CB29C8DEEF00053C96 /* MainModule */,
+				2440C6CF29C8DFB000053C96 /* StatisticsModule */,
 				242B38F729C3856C00ED3736 /* ProfileModule */,
-				24945B1629361A2A004C2F22 /* Controllers */,
+				2440C6D229C8E00B00053C96 /* NewWorkoutModule */,
+				2440C6D529C8E07000053C96 /* RepsWorkoutModule */,
+				2440C6D829C8E0B000053C96 /* TimerWorkoutModule */,
+				2440C6DB29C8E0FC00053C96 /* EditingProfileModule */,
 				248428A1294D0DC50009EB33 /* Service */,
 				24C0263929374C0F0041E6E5 /* Extensions */,
 				24945B1729361A34004C2F22 /* Resources */,
@@ -261,32 +379,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		24945B1529361A1E004C2F22 /* Views */ = {
+		24945B1629361A2A004C2F22 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				24945B182936265E004C2F22 /* MainVC */,
-				245CA1122947349600A7874F /* StatisticsVC */,
-				2430BF1B294A4D3B002E7571 /* NewWorkoutVC */,
-				248774B02952387700DB9312 /* RepsWorkoutVC */,
-				248A4AC8295352E4000E081A /* TimerWorkoutVC */,
-				2486EA202954763B00B9BDBA /* Alerts */,
-				244287D5295F7593008FC5B2 /* Animation.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		24945B1629361A2A004C2F22 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				24945B032936134D004C2F22 /* MainViewController.swift */,
-				246E801A293E4E6B0091702E /* StatisticViewController.swift */,
 				245CA11629473E7700A7874F /* MainTabBarViewController.swift */,
-				2490814A2948D0F800563B41 /* NewWorkoutViewController.swift */,
-				248774AE2952349C00DB9312 /* RepsWorkoutViewController.swift */,
-				248A4AC629535173000E081A /* TimerWorkoutViewController.swift */,
-				243529D429704D0A0080F47D /* EditingProfileViewController .swift */,
 			);
-			path = Controllers;
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		24945B1729361A34004C2F22 /* Resources */ = {
@@ -298,16 +396,6 @@
 				24945B0D2936134E004C2F22 /* Info.plist */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		24945B182936265E004C2F22 /* MainVC */ = {
-			isa = PBXGroup;
-			children = (
-				2456AA0C2938E00B00006E8A /* Cells */,
-				24945B192936268C004C2F22 /* CalendarView.swift */,
-				2433A0882936314100FD7ADC /* WeatherView.swift */,
-			);
-			path = MainVC;
 			sourceTree = "<group>";
 		};
 		24C0263929374C0F0041E6E5 /* Extensions */ = {
