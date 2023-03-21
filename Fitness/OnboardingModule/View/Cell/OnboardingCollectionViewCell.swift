@@ -14,14 +14,12 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
     private let backgroundImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-//        imageView.image = UIImage(named: "onboardingSecond")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     private let topLabel: UILabel = {
        let label = UILabel()
-//        label.text = "Have a good health"
         label.textColor = .specialGreen
         label.font = .robotoBold24()
         label.textAlignment = .center
@@ -31,7 +29,6 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
     
     private let bottomLabel: UILabel = {
        let label = UILabel()
-//        label.text = "Bad body shape, poor sleep, lack of strength, weight gain, weak bones, easily traumatized body, depressed, stressed, poor metabolism, poor resistance"
         label.textColor = .white
         label.font = .robotoMedium16()
         label.textAlignment = .center

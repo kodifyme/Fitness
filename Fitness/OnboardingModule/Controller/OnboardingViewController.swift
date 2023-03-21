@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol NextTappedDelegate {
+    func nextButtonTapped()
+}
+
 class OnboardingViewController: UIViewController {
+    
+    var delegate: NextTappedDelegate?
     
     private lazy var  nextButton: UIButton = {
         let button = UIButton(type: .system)
@@ -17,7 +23,7 @@ class OnboardingViewController: UIViewController {
         button.titleLabel?.font = .robotoBold20()
         button.tintColor = .specialGreen
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
         return button
     }()
     
@@ -53,6 +59,7 @@ class OnboardingViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        delegate = self
     }
     
     private func setupView() {
@@ -81,19 +88,8 @@ class OnboardingViewController: UIViewController {
         onboardingArray = [firstScreen, secondScreen, thirdScreen]
     }
     
-    @objc private func nextButtonTapped() {
-        if collectionItem == 1 {
-            nextButton.setTitle("START", for: .normal)
-        }
-        
-        if collectionItem == 2 {
-            dismiss(animated: true, completion: nil)
-        } else {
-            collectionItem += 1
-            let index: IndexPath = [0 , collectionItem]
-            collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
-            pageControl.currentPage = collectionItem
-        }
+    @objc func nextTapped() {
+        delegate?.nextButtonTapped()
     }
 }
 
@@ -116,6 +112,24 @@ extension OnboardingViewController: UICollectionViewDataSource {
 extension OnboardingViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: view.frame.width, height: collectionView.frame.height)
+    }
+}
+
+//MARK: - NextTappedDelegate
+extension OnboardingViewController: NextTappedDelegate {
+    func nextButtonTapped() {
+        if collectionItem == 1 {
+            nextButton.setTitle("START", for: .normal)
+        }
+        
+        if collectionItem == 2 {
+            dismiss(animated: true, completion: nil)
+        } else {
+            collectionItem += 1
+            let index: IndexPath = [0 , collectionItem]
+            collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+            pageControl.currentPage = collectionItem
+        }
     }
 }
 
