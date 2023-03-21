@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		240031F7295C4CCC00E2E7C2 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240031F6295C4CCC00E2E7C2 /* CustomAlert.swift */; };
+		2415F87229CA161D00C6E9E6 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2415F87129CA161D00C6E9E6 /* OnboardingViewController.swift */; };
+		2415F87829CA19D500C6E9E6 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2415F87729CA19D500C6E9E6 /* OnboardingModel.swift */; };
+		2415F87B29CA2FB400C6E9E6 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2415F87A29CA2FB400C6E9E6 /* OnboardingCollectionViewCell.swift */; };
 		242B38FB29C3891500ED3736 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242B38FA29C3891500ED3736 /* UserModel.swift */; };
 		2430BF1D294A4D6A002E7571 /* DateAndRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BF1C294A4D6A002E7571 /* DateAndRepeatView.swift */; };
 		2430BF1F294A50F6002E7571 /* RepsOrTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2430BF1E294A50F6002E7571 /* RepsOrTimerView.swift */; };
@@ -53,6 +56,9 @@
 
 /* Begin PBXFileReference section */
 		240031F6295C4CCC00E2E7C2 /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		2415F87129CA161D00C6E9E6 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		2415F87729CA19D500C6E9E6 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
+		2415F87A29CA2FB400C6E9E6 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		242B38FA29C3891500ED3736 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		2430BF1C294A4D6A002E7571 /* DateAndRepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndRepeatView.swift; sourceTree = "<group>"; };
 		2430BF1E294A50F6002E7571 /* RepsOrTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsOrTimerView.swift; sourceTree = "<group>"; };
@@ -109,6 +115,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2415F87329CA170300C6E9E6 /* OnboardingModule */ = {
+			isa = PBXGroup;
+			children = (
+				2415F87529CA171A00C6E9E6 /* Controller */,
+				2415F87429CA171400C6E9E6 /* View */,
+			);
+			path = OnboardingModule;
+			sourceTree = "<group>";
+		};
+		2415F87429CA171400C6E9E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2415F87929CA2F9600C6E9E6 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2415F87529CA171A00C6E9E6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2415F87129CA161D00C6E9E6 /* OnboardingViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2415F87929CA2F9600C6E9E6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2415F87A29CA2FB400C6E9E6 /* OnboardingCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		242B38F729C3856C00ED3736 /* ProfileModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +384,7 @@
 				2486EA202954763B00B9BDBA /* Alerts */,
 				244287D5295F7593008FC5B2 /* Animation.swift */,
 				24945B1629361A2A004C2F22 /* TabBar */,
+				2415F87329CA170300C6E9E6 /* OnboardingModule */,
 				2440C6CB29C8DEEF00053C96 /* MainModule */,
 				2440C6CF29C8DFB000053C96 /* StatisticsModule */,
 				242B38F729C3856C00ED3736 /* ProfileModule */,
@@ -375,6 +415,7 @@
 				2484289F294D0C400009EB33 /* WorkoutModel.swift */,
 				24E3F0E1295A40F10062FE1C /* DifferenceWorkout.swift */,
 				242B38FA29C3891500ED3736 /* UserModel.swift */,
+				2415F87729CA19D500C6E9E6 /* OnboardingModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -534,11 +575,14 @@
 				248774AF2952349C00DB9312 /* RepsWorkoutViewController.swift in Sources */,
 				24C0263C29374C430041E6E5 /* UIColor + Extensions.swift in Sources */,
 				244287D6295F7593008FC5B2 /* Animation.swift in Sources */,
+				2415F87B29CA2FB400C6E9E6 /* OnboardingCollectionViewCell.swift in Sources */,
+				2415F87829CA19D500C6E9E6 /* OnboardingModel.swift in Sources */,
 				248774B2295238B500DB9312 /* WorkoutParametersView.swift in Sources */,
 				2456AA0E2938E01E00006E8A /* CalendarCollectionViewCell.swift in Sources */,
 				24945B1A2936268C004C2F22 /* CalendarView.swift in Sources */,
 				248428A3294D0DDE0009EB33 /* RealmManager.swift in Sources */,
 				24945B022936134D004C2F22 /* SceneDelegate.swift in Sources */,
+				2415F87229CA161D00C6E9E6 /* OnboardingViewController.swift in Sources */,
 				24FA12A629505E2F004420B3 /* Date + Extensions.swift in Sources */,
 				2455D60C296EBBD500DE546D /* WorkoutCollectionViewCell.swift in Sources */,
 				24F697F6296DE594002E7F4C /* Int + Extensions.swift in Sources */,
