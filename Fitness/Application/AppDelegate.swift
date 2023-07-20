@@ -32,7 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
 }
 
+//TODO:
+/*
+ - https://github.com/Loriens/News
+ - Добавить в проект SwiftLint. Набор правил можно взять https://github.com/kodecocodes/swift-style-guide/blob/main/com.raywenderlich.swiftlint.yml
+ - Подумать над архитектурой слоев в приложении (раскидать красиво по папкам)
+ - Исправить косяк с Massive View Controller - всё происходит внутри контроллера, нет разбиения по слоям ответственности
+ - Добавить работу с сетью
+ - Бонус: Подумать над DI - как работать правильно с сервисами (RealmManager, NetworkService), необходимо их закрывать протоколом и прокидывать в контроллеры как внешнюю зависимость
+ */

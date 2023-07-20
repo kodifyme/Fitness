@@ -22,6 +22,8 @@ class CalendarView: UIView {
         layout.minimumInteritemSpacing = 3
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .none
+        collectionView.bounces = false
+        collectionView.isScrollEnabled = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()

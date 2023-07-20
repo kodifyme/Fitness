@@ -10,8 +10,6 @@ import RealmSwift
 
 class StatisticViewController: UIViewController {
     
-    private let mainLabel = UILabel(text: "STATISTIC", font: .robotoMedium24(), textColor: .specialGray)
-    
     private lazy var segmentControlTop: UISegmentedControl = {
         let segmentControl = UISegmentedControl(items: ["Неделя", "Месяц"])
         segmentControl.backgroundColor = .specialGreen
@@ -80,7 +78,6 @@ class StatisticViewController: UIViewController {
     private func setupView() {
         view.backgroundColor = .specialBackground
         
-        view.addSubview(mainLabel)
         view.addSubview(segmentControlTop)
         view.addSubview(nameTextField)
         view.addSubview(exercisesLabel)
@@ -197,10 +194,8 @@ extension StatisticViewController: UITextFieldDelegate {
 extension StatisticViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            mainLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-            mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            segmentControlTop.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 20),
+            segmentControlTop.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 1),
             segmentControlTop.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             segmentControlTop.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             segmentControlTop.heightAnchor.constraint(equalToConstant: 32),

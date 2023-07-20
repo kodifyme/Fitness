@@ -226,7 +226,7 @@ extension MainViewController {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            userPhotoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 40),
+            userPhotoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
             userPhotoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             userPhotoImageView.heightAnchor.constraint(equalToConstant: 100),
             userPhotoImageView.widthAnchor.constraint(equalToConstant: 100),

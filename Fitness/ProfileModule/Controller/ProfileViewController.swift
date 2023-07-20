@@ -17,7 +17,6 @@ struct ResultWorkout {
 class ProfileViewController: UIViewController {
     
     //MARK: - TOP
-    private let mainLabel = UILabel(text: "PROFILE", font: .robotoMedium24(), textColor: .specialGray)
     
     private let nameLabel = UILabel(text: "KODDI", font: .robotoMedium24(), textColor: .white)
     
@@ -107,7 +106,6 @@ class ProfileViewController: UIViewController {
     private func setupView() {
         view.backgroundColor = .specialBackground
         
-        view.addSubview(mainLabel)
         view.addSubview(topView)
         view.addSubview(nameLabel)
         view.addSubview(userImageView)
@@ -192,14 +190,10 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout {
 
 //MARK: - Constraints
 extension ProfileViewController {
-    
     private func setConstraints() {
-        
         NSLayoutConstraint.activate([
-            mainLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-            mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            topView.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 60),
+            topView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             topView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             topView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             topView.heightAnchor.constraint(equalToConstant: 115),

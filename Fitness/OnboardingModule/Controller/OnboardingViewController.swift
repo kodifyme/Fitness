@@ -15,7 +15,7 @@ class OnboardingViewController: UIViewController {
     
     var delegate: NextTappedDelegate?
     
-    private lazy var  nextButton: UIButton = {
+    private lazy var nextButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .white
         button.layer.cornerRadius = 25
@@ -101,7 +101,8 @@ extension OnboardingViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnboardingCollectionViewCell.idOnboardingCell, for: indexPath) as! OnboardingCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnboardingCollectionViewCell.idOnboardingCell,
+                                                      for: indexPath) as! OnboardingCollectionViewCell
         let model = onboardingArray[indexPath.row]
         cell.cellConfigure(model: model)
         return cell
@@ -120,10 +121,13 @@ extension OnboardingViewController: NextTappedDelegate {
     func nextButtonTapped() {
         if collectionItem == 1 {
             nextButton.setTitle("START", for: .normal)
+//            navigationController?.pushViewController(MainTabBarViewController(), animated: true)
         }
         
         if collectionItem == 2 {
-            dismiss(animated: true, completion: nil)
+//            dismiss(animated: true, completion: nil)
+            navigationController?.pushViewController(MainTabBarViewController(), animated: true)
+            
         } else {
             collectionItem += 1
             let index: IndexPath = [0 , collectionItem]
